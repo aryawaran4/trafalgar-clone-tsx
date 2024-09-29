@@ -1,0 +1,248 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"tour_info": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_tour",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+										"width": 8640,
+										"height": 8640
+									},
+									"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+									"width": 8640,
+									"height": 8640,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"title_tour",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Excepteur ut labore mollit mollit do consectetur esse eu ut excepteur laboris labore non consectetur. Aliqua enim ipsum irure fugiat ipsum non aliqua duis anim tempor velit occaecat proident dolore velit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description_tour",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Pariatur esse et ea velit. Sit ea officia laboris quis reprehenderit magna aute cupidatat aliqua quis eu officia."
+											}
+										}
+									]
+								}
+							],
+							[
+								"icon_tour_info",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+										"width": 3168,
+										"height": 4752
+									},
+									"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+									"width": 3168,
+									"height": 4752,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"hover_tour_info",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aute esse mollit eu qui ullamco ad nisi irure tempor ut quis est commodo consequat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"cta_tour",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"date_picker_trip_year": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"date_picker",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2016-10-02"
+								}
+							]
+						]
+					}
+				]
+			},
+			"icon_trip": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+					"width": 6000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+				"width": 6000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title_trip_year": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing in cillum culpa ut cillum veniam officia."
+						}
+					}
+				]
+			},
+			"trip_code": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sint reprehenderit tempor ullamco anim non sunt exercitation quis veniam adipisicing deserunt. Lorem cillum sit dolore anim."
+						}
+					}
+				]
+			},
+			"title_trip_code": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit fugiat proident aliquip aute anim amet culpa sint cillum pariatur quis."
+						}
+					}
+				]
+			},
+			"cta_booking": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"title_booking": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum aute aliqua in quis mollit aliqua mollit officia esse nostrud eu qui do culpa. Officia ex pariatur consequat aliqua. Do dolor reprehenderit irure anim."
+						}
+					}
+				]
+			},
+			"description_hero": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi laborum minim esse culpa Lorem in qui veniam anim ea deserunt eu aliquip reprehenderit."
+						}
+					}
+				]
+			},
+			"title_hero": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip adipisicing Lorem laboris magna adipisicing. Id eu aute reprehenderit elit quis eiusmod pariatur irure laborum."
+						}
+					}
+				]
+			},
+			"description_booking": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu laboris mollit ut duis id ullamco deserunt nisi cillum occaecat nulla ipsum incididunt adipisicing et. Eu dolor reprehenderit tempor est elit culpa do incididunt esse sint pariatur consequat. Sunt eu exercitation proident tempor laborum commodo incididunt."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

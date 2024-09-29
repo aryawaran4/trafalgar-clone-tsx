@@ -1,0 +1,176 @@
+{
+  "id": "hero_section",
+  "type": "SharedSlice",
+  "name": "HeroSection",
+  "description": "HeroSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "icon_trip": {
+          "type": "Image",
+          "config": {
+            "label": "Icon Trip",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title_trip_year": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title Trip Year",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "date_picker_trip_year": {
+          "type": "Group",
+          "config": {
+            "label": "Date Picker Trip Year",
+            "repeat": true,
+            "fields": {
+              "date_picker": {
+                "type": "Date",
+                "config": {
+                  "label": "Date Picker",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "title_hero": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title Hero",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description_hero": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description Hero",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tour_info": {
+          "type": "Group",
+          "config": {
+            "label": "Tour Infos",
+            "repeat": true,
+            "fields": {
+              "icon_tour": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon Tour",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title_tour": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title Tour",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "description_tour": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description Tour",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "icon_tour_info": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon Tour Info",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "hover_tour_info": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Hover Tour Info",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "cta_tour": {
+                "type": "Link",
+                "config": {
+                  "label": "CTA Tour",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "title_trip_code": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title Trip Code",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "trip_code": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Trip Code",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cta_booking": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Booking",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "title_booking": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title Booking",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description_booking": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description Booking",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

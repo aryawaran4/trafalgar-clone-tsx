@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ToursDocumentDataSlicesSlice = never;
+type ToursDocumentDataSlicesSlice = HeroSectionSlice;
 
 /**
  * Content for Tours documents
@@ -67,6 +67,235 @@ export type ToursDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = ToursDocument;
 
+/**
+ * Item in *HeroSection → Default → Primary → Date Picker Trip Year*
+ */
+export interface HeroSectionSliceDefaultPrimaryDatePickerTripYearItem {
+  /**
+   * Date Picker field in *HeroSection → Default → Primary → Date Picker Trip Year*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.date_picker_trip_year[].date_picker
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date_picker: prismic.DateField;
+}
+
+/**
+ * Item in *HeroSection → Default → Primary → Tour Infos*
+ */
+export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
+  /**
+   * Icon Tour field in *HeroSection → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].icon_tour
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon_tour: prismic.ImageField<never>;
+
+  /**
+   * Title Tour field in *HeroSection → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].title_tour
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_tour: prismic.RichTextField;
+
+  /**
+   * Description Tour field in *HeroSection → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].description_tour
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_tour: prismic.RichTextField;
+
+  /**
+   * Icon Tour Info field in *HeroSection → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].icon_tour_info
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon_tour_info: prismic.ImageField<never>;
+
+  /**
+   * Hover Tour Info field in *HeroSection → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].hover_tour_info
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hover_tour_info: prismic.RichTextField;
+
+  /**
+   * CTA Tour field in *HeroSection → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].cta_tour
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_tour: prismic.LinkField;
+}
+
+/**
+ * Primary content in *HeroSection → Default → Primary*
+ */
+export interface HeroSectionSliceDefaultPrimary {
+  /**
+   * Icon Trip field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.icon_trip
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon_trip: prismic.ImageField<never>;
+
+  /**
+   * Title Trip Year field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.title_trip_year
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_trip_year: prismic.RichTextField;
+
+  /**
+   * Date Picker Trip Year field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.date_picker_trip_year[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  date_picker_trip_year: prismic.GroupField<
+    Simplify<HeroSectionSliceDefaultPrimaryDatePickerTripYearItem>
+  >;
+
+  /**
+   * Title Hero field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.title_hero
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_hero: prismic.RichTextField;
+
+  /**
+   * Description Hero field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.description_hero
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_hero: prismic.RichTextField;
+
+  /**
+   * Tour Infos field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tour_info: prismic.GroupField<
+    Simplify<HeroSectionSliceDefaultPrimaryTourInfoItem>
+  >;
+
+  /**
+   * Title Trip Code field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.title_trip_code
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_trip_code: prismic.RichTextField;
+
+  /**
+   * Trip Code field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.trip_code
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  trip_code: prismic.RichTextField;
+
+  /**
+   * CTA Booking field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.cta_booking
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_booking: prismic.LinkField;
+
+  /**
+   * Title Booking field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.title_booking
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_booking: prismic.RichTextField;
+
+  /**
+   * Description Booking field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.description_booking
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_booking: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSection*
+ */
+type HeroSectionSliceVariation = HeroSectionSliceDefault;
+
+/**
+ * HeroSection Shared Slice
+ *
+ * - **API ID**: `hero_section`
+ * - **Description**: HeroSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSlice = prismic.SharedSlice<
+  "hero_section",
+  HeroSectionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -92,6 +321,12 @@ declare module "@prismicio/client" {
       ToursDocumentData,
       ToursDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSectionSlice,
+      HeroSectionSliceDefaultPrimaryDatePickerTripYearItem,
+      HeroSectionSliceDefaultPrimaryTourInfoItem,
+      HeroSectionSliceDefaultPrimary,
+      HeroSectionSliceVariation,
+      HeroSectionSliceDefault,
     };
   }
 }
