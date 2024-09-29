@@ -152,6 +152,16 @@ export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
  */
 export interface HeroSectionSliceDefaultPrimary {
   /**
+   * Hero Image field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
    * Icon Trip field in *HeroSection → Default → Primary*
    *
    * - **Field Type**: Image
@@ -216,26 +226,6 @@ export interface HeroSectionSliceDefaultPrimary {
   >;
 
   /**
-   * Title Trip Code field in *HeroSection → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.title_trip_code
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title_trip_code: prismic.RichTextField;
-
-  /**
-   * Trip Code field in *HeroSection → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.trip_code
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  trip_code: prismic.RichTextField;
-
-  /**
    * CTA Booking field in *HeroSection → Default → Primary*
    *
    * - **Field Type**: Link
@@ -264,6 +254,26 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description_booking: prismic.RichTextField;
+
+  /**
+   * Title Trip Code field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.title_trip_code
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_trip_code: prismic.RichTextField;
+
+  /**
+   * Trip Code field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.trip_code
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  trip_code: prismic.RichTextField;
 }
 
 /**
