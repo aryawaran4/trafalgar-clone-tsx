@@ -68,11 +68,41 @@ export type ToursDocument<Lang extends string = string> =
 export type AllDocumentTypes = ToursDocument;
 
 /**
- * Item in *HeroSection → Default → Primary → Date Picker Trip Year*
+ * Default variation for DaybyDayItinerary Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DaybyDayItinerarySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *DaybyDayItinerary*
+ */
+type DaybyDayItinerarySliceVariation = DaybyDayItinerarySliceDefault;
+
+/**
+ * DaybyDayItinerary Shared Slice
+ *
+ * - **API ID**: `dayby_day_itinerary`
+ * - **Description**: DaybyDayItinerary
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DaybyDayItinerarySlice = prismic.SharedSlice<
+  "dayby_day_itinerary",
+  DaybyDayItinerarySliceVariation
+>;
+
+/**
+ * Item in *TopTourSummary → Default → Primary → Date Picker Trip Year*
  */
 export interface HeroSectionSliceDefaultPrimaryDatePickerTripYearItem {
   /**
-   * Date Picker field in *HeroSection → Default → Primary → Date Picker Trip Year*
+   * Date Picker field in *TopTourSummary → Default → Primary → Date Picker Trip Year*
    *
    * - **Field Type**: Date
    * - **Placeholder**: *None*
@@ -83,21 +113,11 @@ export interface HeroSectionSliceDefaultPrimaryDatePickerTripYearItem {
 }
 
 /**
- * Item in *HeroSection → Default → Primary → Tour Infos*
+ * Item in *TopTourSummary → Default → Primary → Tour Infos*
  */
 export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
   /**
-   * Icon Tour field in *HeroSection → Default → Primary → Tour Infos*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.tour_info[].icon_tour
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon_tour: prismic.ImageField<never>;
-
-  /**
-   * Title Tour field in *HeroSection → Default → Primary → Tour Infos*
+   * Title Tour field in *TopTourSummary → Default → Primary → Tour Infos*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -107,7 +127,7 @@ export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
   title_tour: prismic.RichTextField;
 
   /**
-   * Description Tour field in *HeroSection → Default → Primary → Tour Infos*
+   * Description Tour field in *TopTourSummary → Default → Primary → Tour Infos*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -117,17 +137,7 @@ export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
   description_tour: prismic.RichTextField;
 
   /**
-   * Icon Tour Info field in *HeroSection → Default → Primary → Tour Infos*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.tour_info[].icon_tour_info
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon_tour_info: prismic.ImageField<never>;
-
-  /**
-   * Hover Tour Info field in *HeroSection → Default → Primary → Tour Infos*
+   * Hover Tour Info field in *TopTourSummary → Default → Primary → Tour Infos*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -135,24 +145,29 @@ export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   hover_tour_info: prismic.RichTextField;
-
-  /**
-   * CTA Tour field in *HeroSection → Default → Primary → Tour Infos*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.tour_info[].cta_tour
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_tour: prismic.LinkField;
 }
 
 /**
- * Primary content in *HeroSection → Default → Primary*
+ * Item in *TopTourSummary → Default → Primary → Benefit List*
+ */
+export interface HeroSectionSliceDefaultPrimaryBenefitListItem {
+  /**
+   * Title Benefit field in *TopTourSummary → Default → Primary → Benefit List*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.benefit_list[].title_benefit
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_benefit: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *TopTourSummary → Default → Primary*
  */
 export interface HeroSectionSliceDefaultPrimary {
   /**
-   * Hero Image field in *HeroSection → Default → Primary*
+   * Hero Image field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -162,17 +177,7 @@ export interface HeroSectionSliceDefaultPrimary {
   hero_image: prismic.ImageField<never>;
 
   /**
-   * Icon Trip field in *HeroSection → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_section.default.primary.icon_trip
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon_trip: prismic.ImageField<never>;
-
-  /**
-   * Title Trip Year field in *HeroSection → Default → Primary*
+   * Title Trip Year field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -182,7 +187,7 @@ export interface HeroSectionSliceDefaultPrimary {
   title_trip_year: prismic.RichTextField;
 
   /**
-   * Date Picker Trip Year field in *HeroSection → Default → Primary*
+   * Date Picker Trip Year field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -194,7 +199,7 @@ export interface HeroSectionSliceDefaultPrimary {
   >;
 
   /**
-   * Title Hero field in *HeroSection → Default → Primary*
+   * Title Hero field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -204,7 +209,7 @@ export interface HeroSectionSliceDefaultPrimary {
   title_hero: prismic.RichTextField;
 
   /**
-   * Description Hero field in *HeroSection → Default → Primary*
+   * Description Hero field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -214,7 +219,7 @@ export interface HeroSectionSliceDefaultPrimary {
   description_hero: prismic.RichTextField;
 
   /**
-   * Tour Infos field in *HeroSection → Default → Primary*
+   * Tour Infos field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -226,7 +231,7 @@ export interface HeroSectionSliceDefaultPrimary {
   >;
 
   /**
-   * CTA Booking field in *HeroSection → Default → Primary*
+   * CTA Booking field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -236,7 +241,7 @@ export interface HeroSectionSliceDefaultPrimary {
   cta_booking: prismic.LinkField;
 
   /**
-   * Title Booking field in *HeroSection → Default → Primary*
+   * Title Booking field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -246,7 +251,7 @@ export interface HeroSectionSliceDefaultPrimary {
   title_booking: prismic.RichTextField;
 
   /**
-   * Description Booking field in *HeroSection → Default → Primary*
+   * Description Booking field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -256,7 +261,7 @@ export interface HeroSectionSliceDefaultPrimary {
   description_booking: prismic.RichTextField;
 
   /**
-   * Title Trip Code field in *HeroSection → Default → Primary*
+   * Title Trip Code field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -266,7 +271,7 @@ export interface HeroSectionSliceDefaultPrimary {
   title_trip_code: prismic.RichTextField;
 
   /**
-   * Trip Code field in *HeroSection → Default → Primary*
+   * Trip Code field in *TopTourSummary → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -274,10 +279,32 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   trip_code: prismic.RichTextField;
+
+  /**
+   * Benefit List field in *TopTourSummary → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.benefit_list[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  benefit_list: prismic.GroupField<
+    Simplify<HeroSectionSliceDefaultPrimaryBenefitListItem>
+  >;
+
+  /**
+   * Marketing Message field in *TopTourSummary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.marketing_message
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  marketing_message: prismic.RichTextField;
 }
 
 /**
- * Default variation for HeroSection Slice
+ * Default variation for TopTourSummary Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -290,12 +317,12 @@ export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *HeroSection*
+ * Slice variation for *TopTourSummary*
  */
 type HeroSectionSliceVariation = HeroSectionSliceDefault;
 
 /**
- * HeroSection Shared Slice
+ * TopTourSummary Shared Slice
  *
  * - **API ID**: `hero_section`
  * - **Description**: HeroSection
@@ -331,9 +358,13 @@ declare module "@prismicio/client" {
       ToursDocumentData,
       ToursDocumentDataSlicesSlice,
       AllDocumentTypes,
+      DaybyDayItinerarySlice,
+      DaybyDayItinerarySliceVariation,
+      DaybyDayItinerarySliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimaryDatePickerTripYearItem,
       HeroSectionSliceDefaultPrimaryTourInfoItem,
+      HeroSectionSliceDefaultPrimaryBenefitListItem,
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,
       HeroSectionSliceDefault,

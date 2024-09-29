@@ -1,7 +1,7 @@
 {
   "id": "hero_section",
   "type": "SharedSlice",
-  "name": "HeroSection",
+  "name": "TopTourSummary",
   "description": "HeroSection",
   "variations": [
     {
@@ -16,14 +16,6 @@
           "type": "Image",
           "config": {
             "label": "Hero Image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "icon_trip": {
-          "type": "Image",
-          "config": {
-            "label": "Icon Trip",
             "constraint": {},
             "thumbnails": []
           }
@@ -59,7 +51,7 @@
             "label": "Title Hero",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "heading2"
           }
         },
         "description_hero": {
@@ -77,14 +69,6 @@
             "label": "Tour Infos",
             "repeat": true,
             "fields": {
-              "icon_tour": {
-                "type": "Image",
-                "config": {
-                  "label": "Icon Tour",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
               "title_tour": {
                 "type": "StructuredText",
                 "config": {
@@ -103,14 +87,6 @@
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
               },
-              "icon_tour_info": {
-                "type": "Image",
-                "config": {
-                  "label": "Icon Tour Info",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
               "hover_tour_info": {
                 "type": "StructuredText",
                 "config": {
@@ -118,15 +94,6 @@
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                }
-              },
-              "cta_tour": {
-                "type": "Link",
-                "config": {
-                  "label": "CTA Tour",
-                  "placeholder": "",
-                  "allowTargetBlank": false,
-                  "select": null
                 }
               }
             }
@@ -147,7 +114,7 @@
             "label": "Title Booking",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "heading2"
           }
         },
         "description_booking": {
@@ -172,6 +139,33 @@
           "type": "StructuredText",
           "config": {
             "label": "Trip Code",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "benefit_list": {
+          "type": "Group",
+          "config": {
+            "label": "Benefit List",
+            "repeat": true,
+            "fields": {
+              "title_benefit": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title Benefit",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "marketing_message": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Marketing Message",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

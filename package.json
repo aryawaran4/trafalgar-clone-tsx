@@ -15,7 +15,9 @@
     "@prismicio/react": "^2.9.0",
     "next": "13.5.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "typeface-noto-sans": "^1.1.13",
+    "typeface-source-serif-pro": "^1.1.13"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.49",

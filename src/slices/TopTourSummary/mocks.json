@@ -10,32 +10,6 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"icon_tour",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-										"width": 8640,
-										"height": 8640
-									},
-									"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-									"width": 8640,
-									"height": 8640,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							],
-							[
 								"title_tour",
 								{
 									"__TYPE__": "StructuredTextContent",
@@ -64,32 +38,6 @@
 								}
 							],
 							[
-								"icon_tour_info",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
-										"width": 3168,
-										"height": 4752
-									},
-									"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
-									"width": 3168,
-									"height": 4752,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							],
-							[
 								"hover_tour_info",
 								{
 									"__TYPE__": "StructuredTextContent",
@@ -101,16 +49,6 @@
 											}
 										}
 									]
-								}
-							],
-							[
-								"cta_tour",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
 								}
 							]
 						]
@@ -134,29 +72,6 @@
 						]
 					}
 				]
-			},
-			"icon_trip": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
-					"width": 6000,
-					"height": 4000
-				},
-				"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
-				"width": 6000,
-				"height": 4000,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
 			},
 			"title_trip_year": {
 				"__TYPE__": "StructuredTextContent",
@@ -202,9 +117,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading2",
 						"content": {
-							"text": "Ipsum aute aliqua in quis mollit aliqua mollit officia esse nostrud eu qui do culpa. Officia ex pariatur consequat aliqua. Do dolor reprehenderit irure anim."
+							"text": "Scientist"
 						}
 					}
 				]
@@ -224,9 +139,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading2",
 						"content": {
-							"text": "Aliquip adipisicing Lorem laboris magna adipisicing. Id eu aute reprehenderit elit quis eiusmod pariatur irure laborum."
+							"text": "Noise"
 						}
 					}
 				]
@@ -243,7 +158,6 @@
 				]
 			},
 			"hero_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
@@ -261,7 +175,45 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"marketing_message": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim fugiat Lorem occaecat labore tempor dolor officia dolore ut excepteur labore. Minim non cupidatat minim irure commodo aute in id qui. Eu velit dolor do fugiat."
+						}
+					}
+				]
+			},
+			"benefit_list": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title_benefit",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ullamco eu laboris sunt esse ullamco Lorem."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []
