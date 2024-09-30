@@ -3,9 +3,9 @@
   data-name="Layer 1"
   viewBox="0 0 48 48"
   class="injected-svg icon detailed-highlights-item__icon detailed-highlights-item__icon--large"
-  data-src="/assets/shared/icons/UI-places.svg"
+  data-src="/assets/shared/icons/UI-tick.svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  style="fill: #4b6b35 !important">
-	<path d="M24,4A14.42,14.42,0,0,0,12.27,26.82L22.9,43.4a1.31,1.31,0,0,0,2.2,0L35.77,26.76A14.42,14.42,0,0,0,24,4Zm0,21a6.56,6.56,0,1,1,6.56-6.55A6.56,6.56,0,0,1,24,25Z">
+  style="fill: #a7282e !important">
+	<path d="M42.4,10.54a3.17,3.17,0,0,0-4.49,0L17.72,30.73l-9-9a3.17,3.17,0,0,0-4.49,4.48L15.47,37.46a3.17,3.17,0,0,0,4.49,0L42.4,15A3.19,3.19,0,0,0,42.4,10.54Z">
 	</path>
 </svg>

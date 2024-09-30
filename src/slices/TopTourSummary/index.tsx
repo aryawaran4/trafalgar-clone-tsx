@@ -82,11 +82,11 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                         </p>
                       ),
 
-                      // Link (hyperlink) styling
                       hyperlink: ({ children, node }) => {
                         // Safely check if the target exists
                         const url = node.data.url;
-                        const target = (node.data as any)?.target || "_self"; // Only FilledLinkToWebField or FilledLinkToMediaField may have a target
+                        // Only FilledLinkToWebField or FilledLinkToMediaField may have a target
+                        const target = (node.data as any)?.target || "_self";
                         const rel = target === "_blank" ? "noopener noreferrer" : undefined;
 
                         return (
@@ -179,25 +179,23 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
         <PrismicRichText
           field={slice.primary.marketing_message}
           components={{
-            // Paragraph styling
             paragraph: ({ children }) => (
               <p className="text-white text-sm leading-[150%] bg-[#125A55] p-6 text-center rounded-md lg:text-base">
                 {children}
               </p>
             ),
 
-            // Bold (strong) text styling
             strong: ({ children }) => (
               <strong className="font-bold text-white">
                 {children}
               </strong>
             ),
 
-            // Link (hyperlink) styling
             hyperlink: ({ children, node }) => {
               // Safely check if the target exists
               const url = node.data.url;
-              const target = (node.data as any)?.target || "_self"; // Only FilledLinkToWebField or FilledLinkToMediaField may have a target
+              // Only FilledLinkToWebField or FilledLinkToMediaField may have a target
+              const target = (node.data as any)?.target || "_self";
               const rel = target === "_blank" ? "noopener noreferrer" : undefined;
 
               return (

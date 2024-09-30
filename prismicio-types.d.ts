@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ToursDocumentDataSlicesSlice = HeroSectionSlice;
+type ToursDocumentDataSlicesSlice = HighlightsSlice | HeroSectionSlice;
 
 /**
  * Content for Tours documents
@@ -68,6 +68,118 @@ export type ToursDocument<Lang extends string = string> =
 export type AllDocumentTypes = ToursDocument;
 
 /**
+ * Item in *DaybyDayItinerary → Default → Primary → Cards*
+ */
+export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
+  /**
+   * Image Card field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].image_card
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_card: prismic.ImageField<never>;
+
+  /**
+   * Day field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].day
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  day: prismic.RichTextField;
+
+  /**
+   * Title Card field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].title_card
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_card: prismic.RichTextField;
+
+  /**
+   * Location field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].location
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  location: prismic.RichTextField;
+
+  /**
+   * Description Card field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].description_card
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_card: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *DaybyDayItinerary → Default → Primary*
+ */
+export interface DaybyDayItinerarySliceDefaultPrimary {
+  /**
+   * Heading field in *DaybyDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *DaybyDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Download field in *DaybyDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.download
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  download: prismic.RichTextField;
+
+  /**
+   * Print field in *DaybyDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.print
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  print: prismic.RichTextField;
+
+  /**
+   * Cards field in *DaybyDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<
+    Simplify<DaybyDayItinerarySliceDefaultPrimaryCardsItem>
+  >;
+}
+
+/**
  * Default variation for DaybyDayItinerary Slice
  *
  * - **API ID**: `default`
@@ -76,7 +188,7 @@ export type AllDocumentTypes = ToursDocument;
  */
 export type DaybyDayItinerarySliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<DaybyDayItinerarySliceDefaultPrimary>,
   never
 >;
 
@@ -333,6 +445,183 @@ export type HeroSectionSlice = prismic.SharedSlice<
   HeroSectionSliceVariation
 >;
 
+/**
+ * Item in *Highlights → Sightseeing highlights → Primary → Lists*
+ */
+export interface HighlightsSliceDefaultPrimaryListsItem {
+  /**
+   * Detail field in *Highlights → Sightseeing highlights → Primary → Lists*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.lists[].detail
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  detail: prismic.RichTextField;
+}
+
+/**
+ * Item in *Highlights → TravelHighlights → Primary → Lists*
+ */
+export interface HighlightsSliceTravelHighlightsPrimaryListsItem {
+  /**
+   * Detail field in *Highlights → TravelHighlights → Primary → Lists*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.travelHighlights.primary.lists[].detail
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  detail: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Highlights → Sightseeing highlights → Primary*
+ */
+export interface HighlightsSliceDefaultPrimary {
+  /**
+   * Heading field in *Highlights → Sightseeing highlights → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Heading 2 field in *Highlights → Sightseeing highlights → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.heading_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_2: prismic.RichTextField;
+
+  /**
+   * Lists field in *Highlights → Sightseeing highlights → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.lists[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  lists: prismic.GroupField<Simplify<HighlightsSliceDefaultPrimaryListsItem>>;
+
+  /**
+   * Icon for Lists field in *Highlights → Sightseeing highlights → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.icon_for_lists
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon_for_lists: prismic.ImageField<never>;
+}
+
+/**
+ * Sightseeing highlights variation for Highlights Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HighlightsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Highlights → TravelHighlights → Primary*
+ */
+export interface HighlightsSliceTravelHighlightsPrimary {
+  /**
+   * Heading field in *Highlights → TravelHighlights → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.travelHighlights.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Highlights → TravelHighlights → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.travelHighlights.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Air Transfer field in *Highlights → TravelHighlights → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.travelHighlights.primary.button_air_transfer
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_air_transfer: prismic.LinkField;
+
+  /**
+   * Lists field in *Highlights → TravelHighlights → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.travelHighlights.primary.lists[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  lists: prismic.GroupField<
+    Simplify<HighlightsSliceTravelHighlightsPrimaryListsItem>
+  >;
+
+  /**
+   * Icon for Lists field in *Highlights → TravelHighlights → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.travelHighlights.primary.icon_for_lists
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon_for_lists: prismic.ImageField<never>;
+}
+
+/**
+ * TravelHighlights variation for Highlights Slice
+ *
+ * - **API ID**: `travelHighlights`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightsSliceTravelHighlights = prismic.SharedSliceVariation<
+  "travelHighlights",
+  Simplify<HighlightsSliceTravelHighlightsPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Highlights*
+ */
+type HighlightsSliceVariation =
+  | HighlightsSliceDefault
+  | HighlightsSliceTravelHighlights;
+
+/**
+ * Highlights Shared Slice
+ *
+ * - **API ID**: `highlights`
+ * - **Description**: Highlights
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightsSlice = prismic.SharedSlice<
+  "highlights",
+  HighlightsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -359,6 +648,8 @@ declare module "@prismicio/client" {
       ToursDocumentDataSlicesSlice,
       AllDocumentTypes,
       DaybyDayItinerarySlice,
+      DaybyDayItinerarySliceDefaultPrimaryCardsItem,
+      DaybyDayItinerarySliceDefaultPrimary,
       DaybyDayItinerarySliceVariation,
       DaybyDayItinerarySliceDefault,
       HeroSectionSlice,
@@ -368,6 +659,14 @@ declare module "@prismicio/client" {
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,
       HeroSectionSliceDefault,
+      HighlightsSlice,
+      HighlightsSliceDefaultPrimaryListsItem,
+      HighlightsSliceDefaultPrimary,
+      HighlightsSliceTravelHighlightsPrimaryListsItem,
+      HighlightsSliceTravelHighlightsPrimary,
+      HighlightsSliceVariation,
+      HighlightsSliceDefault,
+      HighlightsSliceTravelHighlights,
     };
   }
 }

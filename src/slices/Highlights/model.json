@@ -1,0 +1,127 @@
+{
+  "id": "highlights",
+  "type": "SharedSlice",
+  "name": "Highlights",
+  "description": "Highlights",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Sightseeing highlights",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "heading_2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading 2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "lists": {
+          "type": "Group",
+          "config": {
+            "label": "Lists",
+            "repeat": true,
+            "fields": {
+              "detail": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Detail",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "icon_for_lists": {
+          "type": "Image",
+          "config": {
+            "label": "Icon for Lists",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "travelHighlights",
+      "name": "TravelHighlights",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_air_transfer": {
+          "type": "Link",
+          "config": {
+            "label": "Button Air Transfer",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "lists": {
+          "type": "Group",
+          "config": {
+            "label": "Lists",
+            "repeat": true,
+            "fields": {
+              "detail": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Detail",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "icon_for_lists": {
+          "type": "Image",
+          "config": {
+            "label": "Icon for Lists",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

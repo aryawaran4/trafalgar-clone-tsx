@@ -2,7 +2,144 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Aboard"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud cupidatat fugiat occaecat culpa fugiat in ex qui aliqua. Quis est veniam culpa cupidatat ut anim."
+						}
+					}
+				]
+			},
+			"download": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Exercitation et ullamco irure voluptate duis voluptate aliqua fugiat voluptate tempor in sit consequat dolor sint. Proident pariatur laborum culpa cillum labore aliqua sunt ipsum nisi eiusmod. Do magna deserunt aliqua exercitation."
+						}
+					}
+				]
+			},
+			"print": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex excepteur in sit enim velit fugiat cupidatat sit do et mollit."
+						}
+					}
+				]
+			},
+			"cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image_card",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+										"width": 3456,
+										"height": 3456
+									},
+									"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+									"width": 3456,
+									"height": 3456,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"day",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Reprehenderit labore qui officia est dolore in minim mollit reprehenderit amet sit minim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"title_card",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Do ipsum mollit est occaecat reprehenderit et voluptate quis magna mollit id est incididunt. Cillum laboris Lorem dolor dolor."
+											}
+										}
+									]
+								}
+							],
+							[
+								"location",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Enim culpa id irure adipisicing cillum enim Lorem veniam proident laborum dolor."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description_card",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laborum et laborum reprehenderit consectetur nisi veniam sint cillum tempor adipisicing non ipsum ea reprehenderit. Consectetur ut duis elit mollit esse ea elit eiusmod sint anim."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]
