@@ -6,12 +6,19 @@
   "variations": [
     {
       "id": "default",
-      "name": "Sightseeing highlights",
+      "name": "Default",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "type": {
+          "type": "Text",
+          "config": {
+            "label": "Type",
+            "placeholder": ""
+          }
+        },
         "heading": {
           "type": "StructuredText",
           "config": {
@@ -21,74 +28,28 @@
             "multi": "heading2"
           }
         },
-        "heading_2": {
+        "title_section": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading 2",
+            "label": "Title Section",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading2"
           }
         },
-        "lists": {
-          "type": "Group",
-          "config": {
-            "label": "Lists",
-            "repeat": true,
-            "fields": {
-              "detail": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Detail",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                }
-              }
-            }
-          }
-        },
-        "icon_for_lists": {
-          "type": "Image",
-          "config": {
-            "label": "Icon for Lists",
-            "constraint": {},
-            "thumbnails": []
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "travelHighlights",
-      "name": "TravelHighlights",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "heading": {
+        "description_section": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading2"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
+            "label": "Description Section",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "button_air_transfer": {
+        "button": {
           "type": "Link",
           "config": {
-            "label": "Button Air Transfer",
+            "label": "Button",
             "placeholder": "",
             "allowTargetBlank": false,
             "select": null

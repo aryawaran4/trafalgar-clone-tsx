@@ -175,7 +175,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
         })}
       </div>
 
-      <div className="pr-[1rem] pl-[1rem]">
+      <div className="pl-[clamp(0.5rem,(100vw-1380px)/2,100vw)] pr-[clamp(0.5rem,(100vw-1380px)/2,100vw)]">
         <PrismicRichText
           field={slice.primary.marketing_message}
           components={{

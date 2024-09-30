@@ -446,11 +446,11 @@ export type HeroSectionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Highlights → Sightseeing highlights → Primary → Lists*
+ * Item in *Highlights → Default → Primary → Lists*
  */
 export interface HighlightsSliceDefaultPrimaryListsItem {
   /**
-   * Detail field in *Highlights → Sightseeing highlights → Primary → Lists*
+   * Detail field in *Highlights → Default → Primary → Lists*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -461,26 +461,21 @@ export interface HighlightsSliceDefaultPrimaryListsItem {
 }
 
 /**
- * Item in *Highlights → TravelHighlights → Primary → Lists*
- */
-export interface HighlightsSliceTravelHighlightsPrimaryListsItem {
-  /**
-   * Detail field in *Highlights → TravelHighlights → Primary → Lists*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.travelHighlights.primary.lists[].detail
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  detail: prismic.RichTextField;
-}
-
-/**
- * Primary content in *Highlights → Sightseeing highlights → Primary*
+ * Primary content in *Highlights → Default → Primary*
  */
 export interface HighlightsSliceDefaultPrimary {
   /**
-   * Heading field in *Highlights → Sightseeing highlights → Primary*
+   * Type field in *Highlights → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  type: prismic.KeyTextField;
+
+  /**
+   * Heading field in *Highlights → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -490,17 +485,37 @@ export interface HighlightsSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
-   * Heading 2 field in *Highlights → Sightseeing highlights → Primary*
+   * Title Section field in *Highlights → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.default.primary.heading_2
+   * - **API ID Path**: highlights.default.primary.title_section
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_2: prismic.RichTextField;
+  title_section: prismic.RichTextField;
 
   /**
-   * Lists field in *Highlights → Sightseeing highlights → Primary*
+   * Description Section field in *Highlights → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.description_section
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_section: prismic.RichTextField;
+
+  /**
+   * Button field in *Highlights → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlights.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+
+  /**
+   * Lists field in *Highlights → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -510,7 +525,7 @@ export interface HighlightsSliceDefaultPrimary {
   lists: prismic.GroupField<Simplify<HighlightsSliceDefaultPrimaryListsItem>>;
 
   /**
-   * Icon for Lists field in *Highlights → Sightseeing highlights → Primary*
+   * Icon for Lists field in *Highlights → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -521,7 +536,7 @@ export interface HighlightsSliceDefaultPrimary {
 }
 
 /**
- * Sightseeing highlights variation for Highlights Slice
+ * Default variation for Highlights Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -534,81 +549,9 @@ export type HighlightsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Highlights → TravelHighlights → Primary*
- */
-export interface HighlightsSliceTravelHighlightsPrimary {
-  /**
-   * Heading field in *Highlights → TravelHighlights → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.travelHighlights.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.RichTextField;
-
-  /**
-   * Description field in *Highlights → TravelHighlights → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.travelHighlights.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Button Air Transfer field in *Highlights → TravelHighlights → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.travelHighlights.primary.button_air_transfer
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_air_transfer: prismic.LinkField;
-
-  /**
-   * Lists field in *Highlights → TravelHighlights → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.travelHighlights.primary.lists[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  lists: prismic.GroupField<
-    Simplify<HighlightsSliceTravelHighlightsPrimaryListsItem>
-  >;
-
-  /**
-   * Icon for Lists field in *Highlights → TravelHighlights → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlights.travelHighlights.primary.icon_for_lists
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon_for_lists: prismic.ImageField<never>;
-}
-
-/**
- * TravelHighlights variation for Highlights Slice
- *
- * - **API ID**: `travelHighlights`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HighlightsSliceTravelHighlights = prismic.SharedSliceVariation<
-  "travelHighlights",
-  Simplify<HighlightsSliceTravelHighlightsPrimary>,
-  never
->;
-
-/**
  * Slice variation for *Highlights*
  */
-type HighlightsSliceVariation =
-  | HighlightsSliceDefault
-  | HighlightsSliceTravelHighlights;
+type HighlightsSliceVariation = HighlightsSliceDefault;
 
 /**
  * Highlights Shared Slice
@@ -662,11 +605,8 @@ declare module "@prismicio/client" {
       HighlightsSlice,
       HighlightsSliceDefaultPrimaryListsItem,
       HighlightsSliceDefaultPrimary,
-      HighlightsSliceTravelHighlightsPrimaryListsItem,
-      HighlightsSliceTravelHighlightsPrimary,
       HighlightsSliceVariation,
       HighlightsSliceDefault,
-      HighlightsSliceTravelHighlights,
     };
   }
 }
