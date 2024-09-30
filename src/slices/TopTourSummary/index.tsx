@@ -17,17 +17,21 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="flex flex-col lg:flex-row lg:gap-[4.5rem]">
-        <div className="w-full aspect-[25/22] overflow-hidden lg:aspect-[171/187] lg:w-6/12 2xl:aspect-[924/697]">
-          <PrismicNextImage className="w-full h-full object-cover object-center" field={slice.primary.hero_image} />
+        <div className="aspect-[25/22] w-full overflow-hidden lg:aspect-[171/187] lg:w-6/12 2xl:aspect-[924/697]">
+          <PrismicNextImage
+            className="h-full w-full object-cover object-center"
+            field={slice.primary.hero_image}
+          />
         </div>
-        <div className="max-w-[868px] pt-4 pb-6 px-4 lg:w-6/12 lg:pl-0 lg:pr-12 lg:pt-8 lg:pb-[1.125rem]">
-          <div className="flex items-center justify-between mb-8 lg:justify-start lg:gap-5">
+
+        <div className="max-w-[868px] px-4 pb-6 pt-4 lg:w-6/12 lg:pb-[1.125rem] lg:pl-0 lg:pr-12 lg:pt-8">
+          <div className="mb-8 flex items-center justify-between lg:justify-start lg:gap-5">
             <div className="flex items-center gap-[0.6rem]">
               <PrismicRichText
                 field={slice.primary.title_trip_year}
                 components={{
                   paragraph: ({ children }) => (
-                    <p className="font-noto-sans text-gray font-semibold">
+                    <p className="font-noto-sans font-semibold text-gray">
                       {children}
                     </p>
                   ),
@@ -40,7 +44,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
             field={slice.primary.title_hero}
             components={{
               heading2: ({ children }) => (
-                <h2 className="text-[22px] leading-tight font-bold font-source-serif mb-2 text-gray lg:text-[32px] lg:mb-5">
+                <h2 className="mb-2 font-source-serif text-[22px] font-bold leading-tight text-gray lg:mb-5 lg:text-[32px]">
                   {children}
                 </h2>
               ),
@@ -51,14 +55,14 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
             field={slice.primary.description_hero}
             components={{
               paragraph: ({ children }) => (
-                <p className="font-noto-sans text-gray text-sm leading-tight mb-8 mt-3.5 lg:text-base lg:my-3 lg:leading-[170%]">
+                <p className="mb-8 mt-3.5 font-noto-sans text-sm leading-tight text-gray lg:my-3 lg:text-base lg:leading-[170%]">
                   {children}
                 </p>
               ),
             }}
           />
 
-          <div className="grid grid-cols-[repeat(2,1fr)] gap-[2rem_2rem] mt-[0.8rem] mb-6 lg:mt-3.5 lg:mb-6">
+          <div className="mb-6 mt-[0.8rem] grid grid-cols-[repeat(2,1fr)] gap-[2rem_2rem] lg:mb-6 lg:mt-3.5">
             {slice.primary.tour_info.map((item) => {
               return (
                 <div>
@@ -66,7 +70,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                     field={item.title_tour}
                     components={{
                       paragraph: ({ children }) => (
-                        <p className="text-gray font-semibold font-noto-sans">
+                        <p className="font-noto-sans font-semibold text-gray">
                           {children}
                         </p>
                       ),
@@ -77,7 +81,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                     field={item.description_tour}
                     components={{
                       paragraph: ({ children }) => (
-                        <p className="text-sm text-gray leading-[150%] lg:text-base">
+                        <p className="text-sm leading-[150%] text-gray lg:text-base">
                           {children}
                         </p>
                       ),
@@ -87,28 +91,36 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                         const url = node.data.url;
                         // Only FilledLinkToWebField or FilledLinkToMediaField may have a target
                         const target = (node.data as any)?.target || "_self";
-                        const rel = target === "_blank" ? "noopener noreferrer" : undefined;
+                        const rel =
+                          target === "_blank"
+                            ? "noopener noreferrer"
+                            : undefined;
 
                         return (
-                          <a href={url} target={target} className="text-sm text-light-gray font-bold leading-[150%] lg:text-base border-b border-dotted border-[#e02044] inline" rel={rel}>
+                          <a
+                            href={url}
+                            target={target}
+                            className="inline border-b border-dotted border-[#e02044] text-sm font-bold leading-[150%] text-light-gray lg:text-base"
+                            rel={rel}
+                          >
                             {children}
                           </a>
                         );
                       },
                     }}
                   />
-
                 </div>
-              )
+              );
             })}
           </div>
-          <div className="w-full flex justify-between items-center gap-4 mb-6 border bg-transparent cursor-pointer no-underline p-4 rounded-md border-solid border-[#e6e6e6]">
+
+          <div className="mb-6 flex w-full cursor-pointer items-center justify-between gap-4 rounded-md border border-solid border-[#e6e6e6] bg-transparent p-4 no-underline">
             <PrismicNextLink field={slice.primary.cta_booking}>
               <PrismicRichText
                 field={slice.primary.title_booking}
                 components={{
                   heading2: ({ children }) => (
-                    <h2 className="font-source-serif font-bold tracking-[-0.4px] text-lg mb-2 text-gray">
+                    <h2 className="mb-2 font-source-serif text-lg font-bold tracking-[-0.4px] text-gray">
                       {children}
                     </h2>
                   ),
@@ -119,7 +131,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                 field={slice.primary.description_booking}
                 components={{
                   paragraph: ({ children }) => (
-                    <p className="font-noto-sans text-sm leading-tight text-light-gray tracking-[-0.1px]">
+                    <p className="font-noto-sans text-sm leading-tight tracking-[-0.1px] text-light-gray">
                       {children}
                     </p>
                   ),
@@ -128,15 +140,13 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
             </PrismicNextLink>
           </div>
 
-          <div className="border-b-[#d9d9d9] border-b border-solid lg:border-none pb-5">
+          <div className="border-b border-solid border-b-[#d9d9d9] pb-5 lg:border-none">
             <div className="flex">
               <PrismicRichText
                 field={slice.primary.title_trip_code}
                 components={{
                   paragraph: ({ children }) => (
-                    <p className="font-semibold text-gray">
-                      {children}
-                    </p>
+                    <p className="font-semibold text-gray">{children}</p>
                   ),
                 }}
               />
@@ -145,9 +155,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                 field={slice.primary.trip_code}
                 components={{
                   paragraph: ({ children }) => (
-                    <p className="font-noto-sans text-light-gray">
-                      {children}
-                    </p>
+                    <p className="font-noto-sans text-light-gray">{children}</p>
                   ),
                 }}
               />
@@ -164,14 +172,14 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
                 field={item.title_benefit}
                 components={{
                   paragraph: ({ children }) => (
-                    <p className="font-noto-sans text-xs text-gray leading-[125%] lg:text-base font-semibold">
+                    <p className="font-noto-sans text-xs font-semibold leading-[125%] text-gray lg:text-base">
                       {children}
                     </p>
                   ),
                 }}
               />
             </div>
-          )
+          );
         })}
       </div>
 
@@ -180,15 +188,13 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
           field={slice.primary.marketing_message}
           components={{
             paragraph: ({ children }) => (
-              <p className="text-white text-sm leading-[150%] bg-[#125A55] p-6 text-center rounded-md lg:text-base">
+              <p className="rounded-md bg-[#125A55] p-6 text-center text-sm leading-[150%] text-white lg:text-base">
                 {children}
               </p>
             ),
 
             strong: ({ children }) => (
-              <strong className="font-bold text-white">
-                {children}
-              </strong>
+              <strong className="font-bold text-white">{children}</strong>
             ),
 
             hyperlink: ({ children, node }) => {
@@ -196,10 +202,16 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
               const url = node.data.url;
               // Only FilledLinkToWebField or FilledLinkToMediaField may have a target
               const target = (node.data as any)?.target || "_self";
-              const rel = target === "_blank" ? "noopener noreferrer" : undefined;
+              const rel =
+                target === "_blank" ? "noopener noreferrer" : undefined;
 
               return (
-                <a href={url} target={target} className="border-b border-dotted border-[#e02044] inline" rel={rel}>
+                <a
+                  href={url}
+                  target={target}
+                  className="inline border-b border-dotted border-[#e02044]"
+                  rel={rel}
+                >
                   {children}
                 </a>
               );
@@ -207,8 +219,6 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => {
           }}
         />
       </div>
-
-
     </section>
   );
 };

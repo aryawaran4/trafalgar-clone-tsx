@@ -22,13 +22,13 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-4 py-6 flex flex-col gap-4 lg:py-12 lg:gap-0 lg:px-[clamp(0.5rem,(100vw_-_1380px)/2,100vw)]"
+      className="flex flex-col gap-4 px-4 py-6 lg:gap-0 lg:px-[clamp(0.5rem,(100vw_-_1380px)/2,100vw)] lg:py-12"
     >
       <PrismicRichText
         field={slice.primary.heading}
         components={{
           heading2: ({ children }) => (
-            <h2 className="pt-5 pb-0 lg:py-6 text-center text-gray font-source-serif font-bold text-[28px] leading-[125%] lg:text-left xl:text-3xl xl:py-8">
+            <h2 className="pb-0 pt-5 text-center font-source-serif text-[28px] font-bold leading-[125%] text-gray lg:py-6 lg:text-left xl:py-8 xl:text-3xl">
               {children}
             </h2>
           ),
@@ -42,7 +42,7 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
             components={{
               heading2: ({ children }) => (
                 <p
-                  className="text-2xl font-source-serif font-bold leading-[125%] text-center lg:text-lg lg:text-left xl:text-2xl"
+                  className="text-center font-source-serif text-2xl font-bold leading-[125%] lg:text-left lg:text-lg xl:text-2xl"
                   style={{
                     color:
                       slice.primary.type === "travel" ? "#4B6B35" : "#6b6b6b",
@@ -58,7 +58,7 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
             field={slice.primary.description_section}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-center mt-2 font-noto-sans text-sm text-light-gray lg:text-left">
+                <p className="mt-2 text-center font-noto-sans text-sm text-light-gray lg:text-left">
                   {children}
                 </p>
               ),
@@ -67,7 +67,7 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
 
           {isFilled.link(slice.primary.button) && (
             <PrismicNextLink
-              className="bg-[#a7282e] hidden lg:block w-fit mt-6 font-noto-sans text-base font-bold text-white py-[calc(1rem_-_1px)] px-[calc(2rem_-_1px)] text-center"
+              className="mt-6 hidden w-fit bg-[#a7282e] px-[calc(2rem_-_1px)] py-[calc(1rem_-_1px)] text-center font-noto-sans text-base font-bold text-white lg:block"
               field={slice.primary.button}
             >
               Airport Transfers
@@ -75,7 +75,7 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
           )}
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:gap-6 lg:w-[70%]">
+        <div className="flex flex-col lg:w-[70%] lg:flex-row lg:gap-6">
           {(() => {
             const totalItems = slice.primary.lists.length;
             const leftColumnCount = Math.ceil(totalItems / 2);
@@ -89,17 +89,17 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
                     .slice(0, leftColumnCount)
                     .map((item, index) => (
                       <div className="flex gap-6" key={index}>
-                        <div className="flex-none w-10 h-10 overflow-hidden">
+                        <div className="h-10 w-10 flex-none overflow-hidden">
                           <PrismicNextImage
                             field={slice.primary.icon_for_lists}
-                            className="w-full h-full object-cover object-center"
+                            className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <PrismicRichText
                           field={item.detail}
                           components={{
                             paragraph: ({ children }) => (
-                              <p className="text-sm font-noto-sans leading-[150%] text-gray lg:text-sm">
+                              <p className="font-noto-sans text-sm leading-[150%] text-gray lg:text-sm">
                                 {children}
                               </p>
                             ),
@@ -115,17 +115,17 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
                     .slice(leftColumnCount, leftColumnCount + rightColumnCount)
                     .map((item, index) => (
                       <div className="flex gap-6" key={index}>
-                        <div className="flex-none w-10 h-10 overflow-hidden">
+                        <div className="h-10 w-10 flex-none overflow-hidden">
                           <PrismicNextImage
                             field={slice.primary.icon_for_lists}
-                            className="w-full h-full object-cover object-center"
+                            className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <PrismicRichText
                           field={item.detail}
                           components={{
                             paragraph: ({ children }) => (
-                              <p className="text-sm font-noto-sans leading-[150%] text-gray lg:text-sm">
+                              <p className="font-noto-sans text-sm leading-[150%] text-gray lg:text-sm">
                                 {children}
                               </p>
                             ),
@@ -141,7 +141,7 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
 
         {isFilled.link(slice.primary.button) && (
           <PrismicNextLink
-            className="bg-[#a7282e] lg:hidden block mx-auto w-fit mt-6 font-noto-sans text-base font-bold text-white py-[calc(1rem_-_1px)] px-[calc(2rem_-_1px)] text-center"
+            className="mx-auto mt-6 block w-fit bg-[#a7282e] px-[calc(2rem_-_1px)] py-[calc(1rem_-_1px)] text-center font-noto-sans text-base font-bold text-white lg:hidden"
             field={slice.primary.button}
           >
             Airport Transfers
@@ -154,7 +154,7 @@ const Highlights = ({ slice, index, slices }: HighlightsProps): JSX.Element => {
         <div
           style={{
             borderBottom: "1px solid #d9d9d9",
-            paddingBottom: "3rem"
+            paddingBottom: "3rem",
           }}
         />
       )}
