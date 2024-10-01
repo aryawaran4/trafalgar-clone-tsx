@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ToursDocumentDataSlicesSlice = HighlightsSlice | HeroSectionSlice;
+type ToursDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
+  | HighlightsSlice
+  | HeroSectionSlice;
 
 /**
  * Content for Tours documents
@@ -207,6 +210,89 @@ type DaybyDayItinerarySliceVariation = DaybyDayItinerarySliceDefault;
 export type DaybyDayItinerarySlice = prismic.SharedSlice<
   "dayby_day_itinerary",
   DaybyDayItinerarySliceVariation
+>;
+
+/**
+ * Item in *FrequentlyAskedQuestions → Default → Primary → QnA*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimaryQnaItem {
+  /**
+   * Question field in *FrequentlyAskedQuestions → Default → Primary → QnA*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.qna[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *FrequentlyAskedQuestions → Default → Primary → QnA*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.qna[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FrequentlyAskedQuestions → Default → Primary*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimary {
+  /**
+   * Heading field in *FrequentlyAskedQuestions → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * QnA field in *FrequentlyAskedQuestions → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.qna[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  qna: prismic.GroupField<
+    Simplify<FrequentlyAskedQuestionsSliceDefaultPrimaryQnaItem>
+  >;
+}
+
+/**
+ * Default variation for FrequentlyAskedQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FrequentlyAskedQuestionsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FrequentlyAskedQuestions*
+ */
+type FrequentlyAskedQuestionsSliceVariation =
+  FrequentlyAskedQuestionsSliceDefault;
+
+/**
+ * FrequentlyAskedQuestions Shared Slice
+ *
+ * - **API ID**: `frequently_asked_questions`
+ * - **Description**: FrequentlyAskedQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSlice = prismic.SharedSlice<
+  "frequently_asked_questions",
+  FrequentlyAskedQuestionsSliceVariation
 >;
 
 /**
@@ -595,6 +681,11 @@ declare module "@prismicio/client" {
       DaybyDayItinerarySliceDefaultPrimary,
       DaybyDayItinerarySliceVariation,
       DaybyDayItinerarySliceDefault,
+      FrequentlyAskedQuestionsSlice,
+      FrequentlyAskedQuestionsSliceDefaultPrimaryQnaItem,
+      FrequentlyAskedQuestionsSliceDefaultPrimary,
+      FrequentlyAskedQuestionsSliceVariation,
+      FrequentlyAskedQuestionsSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimaryDatePickerTripYearItem,
       HeroSectionSliceDefaultPrimaryTourInfoItem,
