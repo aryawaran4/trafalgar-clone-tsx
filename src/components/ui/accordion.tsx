@@ -190,13 +190,13 @@ const AccordionItem = ({
     <div className="border border-[#e6e6e6]">
       <button
         onClick={handleClick}
-        className={`flex w-full items-center justify-between gap-2 border p-3 font-noto-sans text-base font-bold text-gray transition-all duration-500 lg:px-[1.25em] lg:py-[1em] ${
+        className={`flex w-full items-center justify-between gap-2 border p-3 font-noto-sans text-lg font-bold text-gray transition-all duration-500 lg:px-[1.25em] lg:py-[1em] ${
           isOpen
             ? "border-[#2d5a7b] bg-[#2d5a7b] text-white"
             : "border-[#e6e6e6] bg-white text-gray"
         }`}
       >
-        <span>{question}</span>
+        <span className="text-left">{question}</span>
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e6e6e6]">
           <Image
             src={isOpen ? Minus : Add}
