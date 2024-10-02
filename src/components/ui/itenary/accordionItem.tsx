@@ -3,6 +3,7 @@ import Chevron from "@/components/icons/ico-chevron.svg";
 import Image from "next/image";
 import { ItenaryType } from "@/type/itenary.type";
 import { createTypeObjects } from "@/components/utils/ItenaryIcon";
+import Arrow from "@/components/icons/ico-arrow.svg";
 
 interface AccordionItemProps {
   isOpen: boolean;
@@ -42,22 +43,44 @@ const AccordionItem = ({ isOpen, onClick, item }: AccordionItemProps) => {
             {item.day}
           </div>
           <div className="flex flex-col items-start gap-[.625rem] lg:flex-row lg:items-center lg:gap-[1rem]">
-            <div className="font-source-serif font-bold text-gray md:text-lg">
+            <div className="font-source-serif font-bold text-gray md:text-lg text-left">
               {item.title}
             </div>
-            <div className="font-noto-sans text-sm font-normal text-light-gray">
-              {item.location}
+            <div className="flex items-center font-noto-sans text-sm font-normal text-light-gray">
+              {item.location
+                .split(",")
+                .map((location: string, index: number, array: any) => (
+                  <span key={index} className="flex items-center">
+                    {location.trim()}
+                    {index < array.length - 1 && (
+                      <Image
+                        src={Arrow}
+                        alt={Arrow}
+                        width={9}
+                        height={9}
+                        className="mx-1.5"
+                      />
+                    )}
+                  </span>
+                ))}
             </div>
           </div>
           <div className="flex items-center gap-4">
-            {typeObjects.slice(0, 2).map(({ type, title, icon }) => (
-              <div key={type} className="flex items-center gap-2">
-                <Image src={icon} alt={title} width={24} />
-                <p className="font-noto-sans text-sm text-light-gray">
-                  {title}
-                </p>
-              </div>
-            ))}
+            {typeObjects
+              .filter(
+                (e) =>
+                  e.type === "arrival" ||
+                  e.type === "departure" ||
+                  e.type === "welcome",
+              )
+              .map(({ type, title, icon }) => (
+                <div key={type} className="flex items-center gap-2">
+                  <Image src={icon} alt={title} width={24} />
+                  <p className="font-noto-sans text-sm text-light-gray">
+                    {title}
+                  </p>
+                </div>
+              ))}
           </div>
         </div>
 
@@ -91,22 +114,29 @@ const AccordionItem = ({ isOpen, onClick, item }: AccordionItemProps) => {
               <div className="mb-4 font-noto-sans text-sm leading-[150%] text-light-gray lg:text-base lg:leading-[170%]">
                 {item.description}
               </div>
-              <div className="flex flex-col gap-2">
-                {typeObjects.map(({ type, title, icon, description }) => (
-                  <div key={type} className="flex items-center gap-2">
-                    <div className="p-1">
-                      <Image src={icon} alt={title} width={24} />
+              <div className="flex flex-col gap-5">
+                {typeObjects.map(
+                  ({ type, title, icon, description, notes }) => (
+                    <div key={type}>
+                      <div className="flex items-center gap-4">
+                        <div className="p-1">
+                          <Image src={icon} alt={title} width={24} />
+                        </div>
+                        <div className="flex items-start gap-1">
+                          <span className="flex-shrink-0 font-noto-sans text-sm font-semibold text-gray lg:text-base">
+                            {title}
+                            <span className="font-noto-sans text-sm text-light-gray lg:text-base font-normal">
+                              {description}
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="ml-[48px] font-noto-sans text-xs text-light-gray">
+                        {notes}
+                      </div>
                     </div>
-                    <div className="flex items-start gap-1">
-                      <span className="flex-shrink-0 font-noto-sans text-sm font-semibold text-gray lg:text-base">
-                        {title}
-                      </span>
-                      <span className="text-dark font-noto-sans text-sm text-light-gray lg:text-base">
-                        {description}
-                      </span>
-                    </div>
-                  </div>
-                ))}
+                  ),
+                )}
               </div>
             </div>
             <div className="opacity-1 hidden aspect-video h-fit w-full translate-y-0 overflow-hidden rounded transition-all duration-500 md:block lg:max-w-[40%]">

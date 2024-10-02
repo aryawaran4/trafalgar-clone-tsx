@@ -50,6 +50,14 @@
 										}
 									]
 								}
+							],
+							[
+								"type_tour",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "just",
+									"type": "Text"
+								}
 							]
 						]
 					}
@@ -209,6 +217,14 @@
 											}
 										}
 									]
+								}
+							],
+							[
+								"type_benefit",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "answer",
+									"type": "Text"
 								}
 							]
 						]

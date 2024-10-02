@@ -13,7 +13,8 @@ export interface BenefitType {
     type: string;
     title: string;
     icon: StaticImageData;
-    description?: JSX.Element; // Updated to be JSX.Element
+    description?: JSX.Element;
+    notes?: JSX.Element;
   };
 }
 
@@ -59,6 +60,7 @@ export const createTypeObjects = (
   benefitTypes.departure.description = benefitList.departure;
   benefitTypes.welcome.description = benefitList.welcome;
   benefitTypes.accommodation.description = benefitList.accommodation.text; // Assuming you want the text part
+  benefitTypes.accommodation.notes = benefitList.accommodation.notes;
   benefitTypes.meals.description = benefitList.meals;
 
   return inputTypes
@@ -67,6 +69,7 @@ export const createTypeObjects = (
     type: string;
     title: string;
     icon: StaticImageData;
-    description?: JSX.Element; // Include the description in the return type
+    description?: JSX.Element;
+    notes?: JSX.Element;
   }>;
 };

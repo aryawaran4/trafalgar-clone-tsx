@@ -87,10 +87,28 @@
                   "placeholder": ""
                 }
               },
-              "label_format": {
+              "description_card": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description Card",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "label_text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Label Text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "label_color": {
                 "type": "Text",
                 "config": {
-                  "label": "Label Format",
+                  "label": "Label Color",
                   "placeholder": ""
                 }
               },
@@ -99,15 +117,6 @@
                 "config": {
                   "label": "List Benefit",
                   "placeholder": ""
-                }
-              },
-              "description_card": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Description Card",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
               },
               "image_card": {

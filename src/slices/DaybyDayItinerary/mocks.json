@@ -100,14 +100,6 @@
 								}
 							],
 							[
-								"label_format",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "production",
-									"type": "Text"
-								}
-							],
-							[
 								"list_benefit",
 								{
 									"__TYPE__": "FieldContent",
@@ -228,6 +220,28 @@
 											"type": "paragraph",
 											"content": {
 												"text": "Eiusmod nostrud incididunt id commodo. Magna sint ullamco sunt ex duis eiusmod ipsum id cillum consectetur ex dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"label_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "species",
+									"type": "Text"
+								}
+							],
+							[
+								"label_text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Reprehenderit sint ea id minim ad occaecat sint labore duis consectetur qui."
 											}
 										}
 									]

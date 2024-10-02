@@ -116,14 +116,34 @@ export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
   location: prismic.KeyTextField;
 
   /**
-   * Label Format field in *DaybyDayItinerary → Default → Primary → Cards*
+   * Description Card field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].description_card
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_card: prismic.RichTextField;
+
+  /**
+   * Label Text field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].label_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  label_text: prismic.RichTextField;
+
+  /**
+   * Label Color field in *DaybyDayItinerary → Default → Primary → Cards*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].label_format
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].label_color
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  label_format: prismic.KeyTextField;
+  label_color: prismic.KeyTextField;
 
   /**
    * List Benefit field in *DaybyDayItinerary → Default → Primary → Cards*
@@ -134,16 +154,6 @@ export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   list_benefit: prismic.KeyTextField;
-
-  /**
-   * Description Card field in *DaybyDayItinerary → Default → Primary → Cards*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].description_card
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description_card: prismic.RichTextField;
 
   /**
    * Image Card field in *DaybyDayItinerary → Default → Primary → Cards*
@@ -406,6 +416,16 @@ export interface HeroSectionSliceDefaultPrimaryDatePickerTripYearItem {
  */
 export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
   /**
+   * Type Tour field in *TopTourSummary → Default → Primary → Tour Infos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.tour_info[].type_tour
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  type_tour: prismic.KeyTextField;
+
+  /**
    * Title Tour field in *TopTourSummary → Default → Primary → Tour Infos*
    *
    * - **Field Type**: Rich Text
@@ -440,6 +460,16 @@ export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
  * Item in *TopTourSummary → Default → Primary → Benefit List*
  */
 export interface HeroSectionSliceDefaultPrimaryBenefitListItem {
+  /**
+   * Type Benefit field in *TopTourSummary → Default → Primary → Benefit List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.benefit_list[].type_benefit
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  type_benefit: prismic.KeyTextField;
+
   /**
    * Title Benefit field in *TopTourSummary → Default → Primary → Benefit List*
    *

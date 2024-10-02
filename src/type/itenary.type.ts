@@ -3,7 +3,8 @@ export interface ItenaryType {
   day: JSX.Element;
   title: JSX.Element;
   location: any;
-  label: any;
+  labelColor: any;
+  labelText: any;
   benefit: any;
   description: JSX.Element;
   image: JSX.Element;

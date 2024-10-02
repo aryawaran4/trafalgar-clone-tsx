@@ -5,6 +5,11 @@
 @import 'typeface-noto-sans';
 @import 'typeface-source-serif-pro';
 
+
+* {
+  scroll-behavior: smooth;
+}
+
 /* accordion style */
 @keyframes slide-down {
   from {

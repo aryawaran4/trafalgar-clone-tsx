@@ -14,14 +14,25 @@ export type DaybyDayItineraryProps =
  */
 const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
   const items = slice.primary.cards.map((item) => ({
-    banner: <PrismicNextImage className="object-cover w-full h-full" field={item.banner_card} />,
+    banner: (
+      <PrismicNextImage
+        className="h-full w-full object-cover"
+        field={item.banner_card}
+      />
+    ),
     day: <PrismicRichText field={item.day} />,
     title: <PrismicRichText field={item.title_card} />,
     location: item.location,
-    label: item.label_format,
+    labelColor: item.label_color,
+    labelText: item.label_text,
     benefit: item.list_benefit,
     description: <PrismicRichText field={item.description_card} />,
-    image: <PrismicNextImage className="w-full h-full object-cover object-center" field={item.image_card} />,
+    image: (
+      <PrismicNextImage
+        className="h-full w-full object-cover object-center"
+        field={item.image_card}
+      />
+    ),
     benefitList: {
       arrival: <PrismicRichText field={item.benefit_arrival_transfer} />,
       departure: <PrismicRichText field={item.benefit_departure_transfer} />,
@@ -45,6 +56,7 @@ const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
 
   return (
     <section
+      id="itinerary"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

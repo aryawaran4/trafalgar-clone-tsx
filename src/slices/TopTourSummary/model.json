@@ -69,6 +69,13 @@
             "label": "Tour Infos",
             "repeat": true,
             "fields": {
+              "type_tour": {
+                "type": "Text",
+                "config": {
+                  "label": "Type Tour",
+                  "placeholder": ""
+                }
+              },
               "title_tour": {
                 "type": "StructuredText",
                 "config": {
@@ -150,6 +157,13 @@
             "label": "Benefit List",
             "repeat": true,
             "fields": {
+              "type_benefit": {
+                "type": "Text",
+                "config": {
+                  "label": "Type Benefit",
+                  "placeholder": ""
+                }
+              },
               "title_benefit": {
                 "type": "StructuredText",
                 "config": {
