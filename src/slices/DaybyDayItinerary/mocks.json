@@ -25,28 +25,6 @@
 					}
 				]
 			},
-			"download": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Exercitation et ullamco irure voluptate duis voluptate aliqua fugiat voluptate tempor in sit consequat dolor sint. Proident pariatur laborum culpa cillum labore aliqua sunt ipsum nisi eiusmod. Do magna deserunt aliqua exercitation."
-						}
-					}
-				]
-			},
-			"print": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ex excepteur in sit enim velit fugiat cupidatat sit do et mollit."
-						}
-					}
-				]
-			},
 			"cards": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -108,20 +86,6 @@
 								}
 							],
 							[
-								"location",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Enim culpa id irure adipisicing cillum enim Lorem veniam proident laborum dolor."
-											}
-										}
-									]
-								}
-							],
-							[
 								"description_card",
 								{
 									"__TYPE__": "StructuredTextContent",
@@ -134,10 +98,158 @@
 										}
 									]
 								}
+							],
+							[
+								"label_format",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "production",
+									"type": "Text"
+								}
+							],
+							[
+								"list_benefit",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "plenty",
+									"type": "Text"
+								}
+							],
+							[
+								"location",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "hurt",
+									"type": "Text"
+								}
+							],
+							[
+								"benefit_arrival_transfer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sint sint esse velit in nulla eiusmod elit cillum anim ut."
+											}
+										}
+									]
+								}
+							],
+							[
+								"benefit_welcome",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Culpa nostrud cillum excepteur id in adipisicing cupidatat nulla sint. Ea aliqua magna commodo ipsum. Eiusmod aliqua mollit enim labore minim adipisicing amet et."
+											}
+										}
+									]
+								}
+							],
+							[
+								"benefit_meals",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Veniam aliquip consectetur ut do laborum laborum excepteur aute."
+											}
+										}
+									]
+								}
+							],
+							[
+								"benefit_departure_transfer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Nostrud nisi est eu magna laborum."
+											}
+										}
+									]
+								}
+							],
+							[
+								"banner_card",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+										"width": 4000,
+										"height": 4000
+									},
+									"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+									"width": 4000,
+									"height": 4000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"benefit_accommodation",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Duis irure ea mollit occaecat consequat excepteur Lorem."
+											}
+										}
+									]
+								}
+							],
+							[
+								"benefit_accommodation_notes",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eiusmod nostrud incididunt id commodo. Magna sint ullamco sunt ex duis eiusmod ipsum id cillum consectetur ex dolore."
+											}
+										}
+									]
+								}
 							]
 						]
 					}
 				]
+			},
+			"download": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"print": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": []

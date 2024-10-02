@@ -31,21 +31,21 @@
           }
         },
         "download": {
-          "type": "StructuredText",
+          "type": "Link",
           "config": {
             "label": "Download",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "select": null
           }
         },
         "print": {
-          "type": "StructuredText",
+          "type": "Link",
           "config": {
             "label": "Print",
             "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "allowTargetBlank": false,
+            "select": null
           }
         },
         "cards": {
@@ -54,10 +54,10 @@
             "label": "Cards",
             "repeat": true,
             "fields": {
-              "image_card": {
+              "banner_card": {
                 "type": "Image",
                 "config": {
-                  "label": "Image Card",
+                  "label": "Banner Card",
                   "constraint": {},
                   "thumbnails": []
                 }
@@ -81,18 +81,92 @@
                 }
               },
               "location": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
                   "label": "Location",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  "placeholder": ""
+                }
+              },
+              "label_format": {
+                "type": "Text",
+                "config": {
+                  "label": "Label Format",
+                  "placeholder": ""
+                }
+              },
+              "list_benefit": {
+                "type": "Text",
+                "config": {
+                  "label": "List Benefit",
+                  "placeholder": ""
                 }
               },
               "description_card": {
                 "type": "StructuredText",
                 "config": {
                   "label": "Description Card",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "image_card": {
+                "type": "Image",
+                "config": {
+                  "label": "Image Card",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "benefit_arrival_transfer": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Arrival Transfer",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "benefit_departure_transfer": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Departure Transfer",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "benefit_welcome": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Welcome",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "benefit_accommodation": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Accommodation",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "benefit_accommodation_notes": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Accommodation Notes",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "benefit_meals": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Benefit Meals",
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

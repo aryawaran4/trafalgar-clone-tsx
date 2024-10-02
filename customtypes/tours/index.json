@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "dayby_day_itinerary": {
+              "type": "SharedSlice"
+            },
             "frequently_asked_questions": {
               "type": "SharedSlice"
             },

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ToursDocumentDataSlicesSlice =
+  | DaybyDayItinerarySlice
   | FrequentlyAskedQuestionsSlice
   | HighlightsSlice
   | HeroSectionSlice;
@@ -75,14 +76,14 @@ export type AllDocumentTypes = ToursDocument;
  */
 export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
   /**
-   * Image Card field in *DaybyDayItinerary → Default → Primary → Cards*
+   * Banner Card field in *DaybyDayItinerary → Default → Primary → Cards*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].image_card
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].banner_card
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image_card: prismic.ImageField<never>;
+  banner_card: prismic.ImageField<never>;
 
   /**
    * Day field in *DaybyDayItinerary → Default → Primary → Cards*
@@ -107,12 +108,32 @@ export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
   /**
    * Location field in *DaybyDayItinerary → Default → Primary → Cards*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].location
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  location: prismic.RichTextField;
+  location: prismic.KeyTextField;
+
+  /**
+   * Label Format field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].label_format
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_format: prismic.KeyTextField;
+
+  /**
+   * List Benefit field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].list_benefit
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list_benefit: prismic.KeyTextField;
 
   /**
    * Description Card field in *DaybyDayItinerary → Default → Primary → Cards*
@@ -123,6 +144,76 @@ export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description_card: prismic.RichTextField;
+
+  /**
+   * Image Card field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].image_card
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_card: prismic.ImageField<never>;
+
+  /**
+   * Benefit Arrival Transfer field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].benefit_arrival_transfer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_arrival_transfer: prismic.RichTextField;
+
+  /**
+   * Benefit Departure Transfer field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].benefit_departure_transfer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_departure_transfer: prismic.RichTextField;
+
+  /**
+   * Benefit Welcome field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].benefit_welcome
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_welcome: prismic.RichTextField;
+
+  /**
+   * Benefit Accommodation field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].benefit_accommodation
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_accommodation: prismic.RichTextField;
+
+  /**
+   * Benefit Accommodation Notes field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].benefit_accommodation_notes
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_accommodation_notes: prismic.RichTextField;
+
+  /**
+   * Benefit Meals field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].benefit_meals
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  benefit_meals: prismic.RichTextField;
 }
 
 /**
@@ -152,22 +243,22 @@ export interface DaybyDayItinerarySliceDefaultPrimary {
   /**
    * Download field in *DaybyDayItinerary → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: dayby_day_itinerary.default.primary.download
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  download: prismic.RichTextField;
+  download: prismic.LinkField;
 
   /**
    * Print field in *DaybyDayItinerary → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: dayby_day_itinerary.default.primary.print
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  print: prismic.RichTextField;
+  print: prismic.LinkField;
 
   /**
    * Cards field in *DaybyDayItinerary → Default → Primary*
