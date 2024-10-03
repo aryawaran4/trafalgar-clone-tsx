@@ -38,24 +38,18 @@
 								}
 							],
 							[
-								"hover_tour_info",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Aute esse mollit eu qui ullamco ad nisi irure tempor ut quis est commodo consequat."
-											}
-										}
-									]
-								}
-							],
-							[
 								"type_tour",
 								{
 									"__TYPE__": "FieldContent",
 									"value": "just",
+									"type": "Text"
+								}
+							],
+							[
+								"hover_tour_info",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "mile",
 									"type": "Text"
 								}
 							]

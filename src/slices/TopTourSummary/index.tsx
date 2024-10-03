@@ -1,3 +1,4 @@
+"use client";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -9,7 +10,9 @@ import AccommodationIcon from "@/components/icons/ico-accomodation.svg";
 import MealsIcon from "@/components/icons/ico-meals.svg";
 import ItineraryIcon from "@/components/icons/ico-location-borderless.svg";
 import NextIcon from "@/components/icons/ico-next.svg";
+import QuestionIcon from "@/components/icons/ico-question.svg";
 import NextImage from "next/image";
+import { Tooltip } from "react-tooltip";
 
 /**
  * Props for `TopTourSummary`.
@@ -126,32 +129,53 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => (
                     ),
                   }}
                 />
-                <PrismicRichText
-                  field={item.description_tour}
-                  components={{
-                    paragraph: ({ children }) => (
-                      <p className="text-sm leading-[150%] text-gray lg:text-base">
-                        {children}
-                      </p>
-                    ),
-                    hyperlink: ({ children, node }) => {
-                      const url = node.data.url;
-                      const target = (node.data as any)?.target || "_self";
-                      const rel =
-                        target === "_blank" ? "noopener noreferrer" : undefined;
 
-                      return (
-                        <a
-                          href={url}
-                          target={target}
-                          className="border-b border-dotted border-[#e02044] text-sm leading-[150%] text-gray hover:border-solid lg:text-base"
-                          rel={rel}
-                        >
+                <div className="flex gap-1">
+                  <PrismicRichText
+                    field={item.description_tour}
+                    components={{
+                      paragraph: ({ children }) => (
+                        <p className="text-sm leading-[150%] text-gray lg:text-base">
                           {children}
-                        </a>
-                      );
-                    },
-                  }}
+                        </p>
+                      ),
+                      hyperlink: ({ children, node }) => {
+                        const url = node.data.url;
+                        const target = (node.data as any)?.target || "_self";
+                        const rel =
+                          target === "_blank"
+                            ? "noopener noreferrer"
+                            : undefined;
+
+                        return (
+                          <a
+                            href={url}
+                            target={target}
+                            className="border-b border-dotted border-[#e02044] text-sm leading-[150%] text-gray hover:border-solid lg:text-base"
+                            rel={rel}
+                          >
+                            {children}
+                          </a>
+                        );
+                      },
+                    }}
+                  />
+                  {item.hover_tour_info !== null && (
+                    <span data-tooltip-id="tooltip-hover">
+                      <NextImage
+                        src={QuestionIcon}
+                        alt="Tooltip Icon"
+                        width={24}
+                        height={24}
+                      />
+                    </span>
+                  )}
+                </div>
+                <Tooltip
+                  id="tooltip-hover"
+                  place="bottom"
+                  content={item.hover_tour_info}
+                  className="tooltip-custom"
                 />
               </div>
             );

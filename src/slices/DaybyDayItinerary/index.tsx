@@ -51,7 +51,7 @@ const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
   const trips = slice.primary.content_trip.map((trip) => ({
     id: trip.trip_id,
     label: trip.label_type,
-    image: <PrismicNextImage field={trip.banner_trip} />,
+    image: <PrismicNextImage className="w-full object-cover" field={trip.banner_trip} />,
     title: <PrismicRichText field={trip.title_trip} />,
     description: <PrismicRichText field={trip.description_trip} />,
     included: trip.included,

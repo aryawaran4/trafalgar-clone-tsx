@@ -7,6 +7,8 @@ import ArrowIcon from "@/components/icons/ico-next.svg";
 import CheckIcon from "@/components/icons/ico-check.svg";
 import QuestionIcon from "@/components/icons/ico-question.svg";
 import { TripType } from "@/type/itenary.type";
+import { Tooltip } from "react-tooltip";
+import { ModalProvider, useModal } from "../modal";
 
 const options: EmblaOptionsType = {
   loop: false,
@@ -31,6 +33,28 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [showNavButtons, setShowNavButtons] = useState(false);
 
+  const { openModal } = useModal();
+
+  const handleOpenModal = (
+    titleTrip: any,
+    imageTrip: any,
+    descriptionTrip: any,
+  ) => {
+    openModal(
+      <div>
+        <div className="tracking[-0.4px] m-0 font-source-serif text-[24px] font-bold leading-[125%]">
+          {titleTrip}
+        </div>
+        <div className="mb-[1.5rem] mt-[2rem] w-full overflow-hidden rounded-md object-cover">
+          {imageTrip}
+        </div>
+        <div className="tracking[-0.1px] m-0 font-noto-sans text-[16px] font-normal leading-[170%]">
+          {descriptionTrip}
+        </div>
+      </div>,
+    );
+  };
+
   // Filter trips based on idCard === trip.id
   const filteredTrips = trips.filter((trip) => trip.id === idCard);
 
@@ -39,10 +63,9 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
     if (!emblaApi) return;
 
     const totalSlides = filteredTrips.length;
-    const slidesInView = emblaApi.slidesInView().length;
 
     // Show navigation buttons if total slides > 3 or slides in view are fewer than total slides
-    setShowNavButtons(totalSlides > 3 || slidesInView < totalSlides);
+    setShowNavButtons(totalSlides > 3);
   }, [emblaApi, filteredTrips.length]);
 
   useEffect(() => {
@@ -141,8 +164,14 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                     {trip.included === "false" && (
                       <div className="pb-4">
                         <a
-                          className="mb-4 block font-noto-sans text-sm font-bold text-gray"
-                          href=""
+                          className="mb-4 block w-fit cursor-pointer border-b border-dotted border-[#e02044] font-noto-sans text-sm font-bold text-gray hover:border-solid"
+                          onClick={() =>
+                            handleOpenModal(
+                              trip.title,
+                              trip.image,
+                              trip.description,
+                            )
+                          } // Use an arrow function to pass parameters
                         >
                           See more
                         </a>
@@ -150,14 +179,25 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                           <span className="font-noto-sans text-xs font-bold text-gray lg:text-sm">
                             Additional Cost Applies
                           </span>
-                          <button>
+                          <div
+                            data-tooltip-id="tooltip-tour"
+                            data-tooltip-html='
+          <strong style="font-size: 14px; font-weight: bold;">Optional Experiences</strong><br/>
+          <span style="font-size: 12px; font-weight: normal;">Optional Experiences are enchantments of your tour</span>
+        '
+                          >
                             <Image
                               src={QuestionIcon}
                               alt=""
                               width={24}
                               height={24}
                             />
-                          </button>
+                          </div>
+                          <Tooltip
+                            id="tooltip-tour"
+                            place="bottom"
+                            className="tooltip-custom"
+                          />
                         </div>
                       </div>
                     )}

@@ -30,3 +30,18 @@
     max-height: 0;
   }
 }
+
+.tooltip-custom {
+  background: white !important;
+  font-family: "Noto Sans", sans-serif !important;
+  border: 1px solid #dedee5 !important;
+  color: #414141 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  max-width: 60ch !important;
+  line-height: 135% !important;
+  font-weight: 400 !important;
+  font-family: "noto-sans" !important;
+  letter-spacing: -.1px !important;
+}

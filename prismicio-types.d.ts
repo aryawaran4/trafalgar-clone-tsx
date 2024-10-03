@@ -545,12 +545,12 @@ export interface HeroSectionSliceDefaultPrimaryTourInfoItem {
   /**
    * Hover Tour Info field in *TopTourSummary → Default → Primary → Tour Infos*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero_section.default.primary.tour_info[].hover_tour_info
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  hover_tour_info: prismic.RichTextField;
+  hover_tour_info: prismic.KeyTextField;
 }
 
 /**
