@@ -76,6 +76,16 @@ export type AllDocumentTypes = ToursDocument;
  */
 export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
   /**
+   * Card Id field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].card_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_id: prismic.KeyTextField;
+
+  /**
    * Banner Card field in *DaybyDayItinerary → Default → Primary → Cards*
    *
    * - **Field Type**: Image
@@ -224,6 +234,81 @@ export interface DaybyDayItinerarySliceDefaultPrimaryCardsItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   benefit_meals: prismic.RichTextField;
+
+  /**
+   * Heading Content Trip field in *DaybyDayItinerary → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.cards[].heading_content_trip
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_content_trip: prismic.RichTextField;
+}
+
+/**
+ * Item in *DaybyDayItinerary → Default → Primary → Content Trip*
+ */
+export interface DaybyDayItinerarySliceDefaultPrimaryContentTripItem {
+  /**
+   * Trip Id field in *DaybyDayItinerary → Default → Primary → Content Trip*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[].trip_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  trip_id: prismic.KeyTextField;
+
+  /**
+   * Label Type field in *DaybyDayItinerary → Default → Primary → Content Trip*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[].label_type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_type: prismic.KeyTextField;
+
+  /**
+   * Banner Trip field in *DaybyDayItinerary → Default → Primary → Content Trip*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[].banner_trip
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner_trip: prismic.ImageField<never>;
+
+  /**
+   * Title Trip field in *DaybyDayItinerary → Default → Primary → Content Trip*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[].title_trip
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_trip: prismic.RichTextField;
+
+  /**
+   * Description Trip field in *DaybyDayItinerary → Default → Primary → Content Trip*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[].description_trip
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_trip: prismic.RichTextField;
+
+  /**
+   * Included field in *DaybyDayItinerary → Default → Primary → Content Trip*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[].included
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  included: prismic.KeyTextField;
 }
 
 /**
@@ -280,6 +365,18 @@ export interface DaybyDayItinerarySliceDefaultPrimary {
    */
   cards: prismic.GroupField<
     Simplify<DaybyDayItinerarySliceDefaultPrimaryCardsItem>
+  >;
+
+  /**
+   * Content Trip field in *DaybyDayItinerary → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dayby_day_itinerary.default.primary.content_trip[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  content_trip: prismic.GroupField<
+    Simplify<DaybyDayItinerarySliceDefaultPrimaryContentTripItem>
   >;
 }
 
@@ -799,6 +896,7 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       DaybyDayItinerarySlice,
       DaybyDayItinerarySliceDefaultPrimaryCardsItem,
+      DaybyDayItinerarySliceDefaultPrimaryContentTripItem,
       DaybyDayItinerarySliceDefaultPrimary,
       DaybyDayItinerarySliceVariation,
       DaybyDayItinerarySliceDefault,

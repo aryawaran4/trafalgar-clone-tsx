@@ -246,6 +246,28 @@
 										}
 									]
 								}
+							],
+							[
+								"card_id",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "average",
+									"type": "Text"
+								}
+							],
+							[
+								"heading_content_trip",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Labore Lorem esse cupidatat aliqua est cillum dolore ad laboris laborum aute."
+											}
+										}
+									]
+								}
 							]
 						]
 					}
@@ -264,6 +286,94 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"content_trip": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"trip_id",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "depth",
+									"type": "Text"
+								}
+							],
+							[
+								"label_type",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "nails",
+									"type": "Text"
+								}
+							],
+							[
+								"description_trip",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Reprehenderit do excepteur dolore esse. Magna mollit minim nulla ipsum amet cupidatat occaecat commodo eu."
+											}
+										}
+									]
+								}
+							],
+							[
+								"title_trip",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Pariatur reprehenderit est consectetur incididunt pariatur. Qui excepteur nostrud non occaecat elit eu labore labore nostrud adipisicing eu deserunt in id labore. Eiusmod exercitation excepteur eu eu."
+											}
+										}
+									]
+								}
+							],
+							[
+								"banner_trip",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+										"width": 4000,
+										"height": 6000
+									},
+									"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+									"width": 4000,
+									"height": 6000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"included",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "expression",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

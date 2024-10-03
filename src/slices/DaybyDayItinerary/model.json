@@ -54,6 +54,13 @@
             "label": "Cards",
             "repeat": true,
             "fields": {
+              "card_id": {
+                "type": "Text",
+                "config": {
+                  "label": "Card Id",
+                  "placeholder": ""
+                }
+              },
               "banner_card": {
                 "type": "Image",
                 "config": {
@@ -179,6 +186,71 @@
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "heading_content_trip": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Heading Content Trip",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "content_trip": {
+          "type": "Group",
+          "config": {
+            "label": "Content Trip",
+            "repeat": true,
+            "fields": {
+              "trip_id": {
+                "type": "Text",
+                "config": {
+                  "label": "Trip Id",
+                  "placeholder": ""
+                }
+              },
+              "label_type": {
+                "type": "Text",
+                "config": {
+                  "label": "Label Type",
+                  "placeholder": ""
+                }
+              },
+              "banner_trip": {
+                "type": "Image",
+                "config": {
+                  "label": "Banner Trip",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title_trip": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title Trip",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "description_trip": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description Trip",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "included": {
+                "type": "Text",
+                "config": {
+                  "label": "Included",
+                  "placeholder": ""
                 }
               }
             }
