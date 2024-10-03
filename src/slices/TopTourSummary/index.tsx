@@ -8,6 +8,7 @@ import TravelIcon from "@/components/icons/ico-date.svg";
 import AccommodationIcon from "@/components/icons/ico-accomodation.svg";
 import MealsIcon from "@/components/icons/ico-meals.svg";
 import ItineraryIcon from "@/components/icons/ico-location-borderless.svg";
+import NextIcon from "@/components/icons/ico-next.svg";
 import NextImage from "next/image";
 
 /**
@@ -111,7 +112,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => (
                   field={item.title_tour}
                   components={{
                     paragraph: ({ children }) => (
-                      <p className="flex items-center gap-2 font-noto-sans font-semibold text-gray">
+                      <p className="mb-[.5rem] flex items-center gap-2 font-noto-sans font-semibold text-gray">
                         {Icon && (
                           <NextImage
                             src={Icon}
@@ -158,28 +159,31 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => (
         </div>
 
         <div className="mb-6 flex items-center justify-between gap-4 rounded-md border border-[#e6e6e6] p-4">
-          <PrismicNextLink field={slice.primary.cta_booking}>
-            <PrismicRichText
-              field={slice.primary.title_booking}
-              components={{
-                heading2: ({ children }) => (
-                  <h2 className="mb-2 font-source-serif text-lg font-bold tracking-[-0.4px] text-gray">
-                    {children}
-                  </h2>
-                ),
-              }}
-            />
-            <PrismicRichText
-              field={slice.primary.description_booking}
-              components={{
-                paragraph: ({ children }) => (
-                  <p className="font-noto-sans text-sm leading-tight tracking-[-0.1px] text-light-gray">
-                    {children}
-                  </p>
-                ),
-              }}
-            />
-          </PrismicNextLink>
+          <span>
+            <PrismicNextLink field={slice.primary.cta_booking}>
+              <PrismicRichText
+                field={slice.primary.title_booking}
+                components={{
+                  heading2: ({ children }) => (
+                    <h2 className="mb-2 font-source-serif text-lg font-bold tracking-[-0.4px] text-gray">
+                      {children}
+                    </h2>
+                  ),
+                }}
+              />
+              <PrismicRichText
+                field={slice.primary.description_booking}
+                components={{
+                  paragraph: ({ children }) => (
+                    <p className="font-noto-sans text-sm leading-tight tracking-[-0.1px] text-light-gray">
+                      {children}
+                    </p>
+                  ),
+                }}
+              />
+            </PrismicNextLink>
+          </span>
+          <NextImage src={NextIcon} alt="icon next" width={24} height={24} />
         </div>
 
         <div className="border-b pb-5 lg:border-none">
@@ -205,12 +209,15 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => (
       </div>
     </div>
 
-    <div className="flex flex-wrap justify-center gap-[2rem] py-[1.5rem] lg:py-[3rem]">
+    <div className="flex flex-wrap justify-center gap-[2rem] px-[clamp(0.5rem,(100vw-1380px)/2,100vw)] py-[1.5rem] lg:py-[3rem]">
       {slice.primary.benefit_list.map((item, index) => {
         const Icon = getBenefitIcon(item.type_benefit);
 
         return (
-          <div key={index} className="flex items-center">
+          <div
+            key={index}
+            className="flex basis-full items-center md:basis-auto"
+          >
             <div className="mr-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#f2f2f2]">
               {Icon && <NextImage src={Icon} alt="" width={24} height={24} />}
             </div>
