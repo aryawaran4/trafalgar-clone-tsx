@@ -125,7 +125,7 @@ const AccordionItem = ({
       <div
         className={`overflow-hidden transition-all duration-500 ${
           isOpen
-            ? "max-h-[1000px] opacity-100" // Adjust max height as needed
+            ? "opacity-100" // Adjust max height as needed
             : "max-h-0 opacity-0"
         }`}
       >

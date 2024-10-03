@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ItenaryType, TripType } from "@/type/itenary.type";
 import { createTypeObjects } from "@/components/utils/ItenaryIcon";
 import Arrow from "@/components/icons/ico-arrow.svg";
+import Carousel from "./carousel";
 
 interface AccordionItemProps {
   isOpen: boolean;
@@ -12,7 +13,12 @@ interface AccordionItemProps {
   trips: TripType[];
 }
 
-const AccordionItem = ({ isOpen, onClick, item, trips }: AccordionItemProps) => {
+const AccordionItem = ({
+  isOpen,
+  onClick,
+  item,
+  trips,
+}: AccordionItemProps) => {
   const typeObjects = createTypeObjects(item.benefit, item.benefitList);
 
   const handleClick = (event: React.MouseEvent) => {
@@ -100,7 +106,7 @@ const AccordionItem = ({ isOpen, onClick, item, trips }: AccordionItemProps) => 
       </button>
       <div
         className={`overflow-hidden transition-all duration-500 ${
-          isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="rounded border border-[#e6e6e6] px-[0.8em] pb-[2.5em] pt-6 transition-opacity duration-500 lg:p-10">
@@ -143,6 +149,10 @@ const AccordionItem = ({ isOpen, onClick, item, trips }: AccordionItemProps) => 
             <div className="opacity-1 hidden aspect-video h-fit w-full translate-y-0 overflow-hidden rounded transition-all duration-500 md:block lg:max-w-[40%]">
               {item.image}
             </div>
+          </div>
+
+          <div className="mt-8">
+            <Carousel idCard={item.id} title={item.titleTrip} trips={trips} />
           </div>
         </div>
       </div>
