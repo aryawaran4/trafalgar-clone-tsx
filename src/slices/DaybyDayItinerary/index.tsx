@@ -14,6 +14,7 @@ export type DaybyDayItineraryProps =
  */
 const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
   const items = slice.primary.cards.map((item) => ({
+    id: item.card_id,
     banner: (
       <PrismicNextImage
         className="h-full w-full object-cover"
@@ -43,6 +44,16 @@ const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
       },
       meals: <PrismicRichText field={item.benefit_meals} />,
     },
+    titleTrip: <PrismicRichText field={item.heading_content_trip} />,
+  }));
+
+  const trips = slice.primary.content_trip.map((trip) => ({
+    id: trip.trip_id,
+    label: trip.label_type,
+    image: <PrismicNextImage field={trip.banner_trip} />,
+    title: <PrismicRichText field={trip.title_trip} />,
+    description: <PrismicRichText field={trip.description_trip} />,
+    included: trip.included,
   }));
 
   const downloadLink =
@@ -83,6 +94,7 @@ const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
         />
         <Accordion
           items={items}
+          trips={trips}
           downloadLink={downloadLink}
           printLink={printLink}
         />

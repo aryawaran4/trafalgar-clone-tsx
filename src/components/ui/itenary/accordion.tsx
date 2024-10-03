@@ -5,17 +5,19 @@ import Chevron from "@/components/icons/ico-chevron.svg";
 import Download from "@/components/icons/ico-download.svg";
 import Print from "@/components/icons/ico-print.svg";
 import AccordionItem from "./accordionItem";
-import { ItenaryType } from "@/type/itenary.type";
+import { ItenaryType, TripType } from "@/type/itenary.type";
 import { handlePrint } from "@/components/utils/handlePrint";
 
 interface AccordionProps {
   items: ItenaryType[];
+  trips: TripType[];
   downloadLink: any;
   printLink: any;
 }
 
 export default function Accordion({
   items,
+  trips,
   downloadLink,
   printLink,
 }: AccordionProps) {
@@ -110,6 +112,7 @@ export default function Accordion({
             isOpen={openItems.includes(index)}
             onClick={() => toggleItem(index)}
             item={item}
+            trips={trips}
           />
         ))}
       </div>

@@ -1,4 +1,5 @@
 export interface ItenaryType {
+  id: any;
   banner: any;
   day: JSX.Element;
   title: JSX.Element;
@@ -15,4 +16,13 @@ export interface ItenaryType {
     accommodation: { text: JSX.Element; notes: JSX.Element },
     meals: JSX.Element;
   };
+  titleTrip: JSX.Element
+}
+export interface TripType {
+  id: any;
+  label: any
+  image: JSX.Element;
+  title: JSX.Element
+  description: JSX.Element
+  included: any
 }

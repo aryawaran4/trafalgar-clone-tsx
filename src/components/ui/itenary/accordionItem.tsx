@@ -1,7 +1,7 @@
 "use client";
 import Chevron from "@/components/icons/ico-chevron.svg";
 import Image from "next/image";
-import { ItenaryType } from "@/type/itenary.type";
+import { ItenaryType, TripType } from "@/type/itenary.type";
 import { createTypeObjects } from "@/components/utils/ItenaryIcon";
 import Arrow from "@/components/icons/ico-arrow.svg";
 
@@ -9,9 +9,10 @@ interface AccordionItemProps {
   isOpen: boolean;
   onClick: () => void;
   item: ItenaryType;
+  trips: TripType[];
 }
 
-const AccordionItem = ({ isOpen, onClick, item }: AccordionItemProps) => {
+const AccordionItem = ({ isOpen, onClick, item, trips }: AccordionItemProps) => {
   const typeObjects = createTypeObjects(item.benefit, item.benefitList);
 
   const handleClick = (event: React.MouseEvent) => {
@@ -43,7 +44,7 @@ const AccordionItem = ({ isOpen, onClick, item }: AccordionItemProps) => {
             {item.day}
           </div>
           <div className="flex flex-col items-start gap-[.625rem] lg:flex-row lg:items-center lg:gap-[1rem]">
-            <div className="font-source-serif font-bold text-gray md:text-lg text-left">
+            <div className="text-left font-source-serif font-bold text-gray md:text-lg">
               {item.title}
             </div>
             <div className="flex items-center font-noto-sans text-sm font-normal text-light-gray">
@@ -125,7 +126,7 @@ const AccordionItem = ({ isOpen, onClick, item }: AccordionItemProps) => {
                         <div className="flex items-start gap-1">
                           <span className="flex-shrink-0 font-noto-sans text-sm font-semibold text-gray lg:text-base">
                             {title}
-                            <span className="font-noto-sans text-sm text-light-gray lg:text-base font-normal">
+                            <span className="font-noto-sans text-sm font-normal text-light-gray lg:text-base">
                               {description}
                             </span>
                           </span>
