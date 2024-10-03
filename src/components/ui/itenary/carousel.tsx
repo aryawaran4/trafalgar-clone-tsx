@@ -8,7 +8,7 @@ import CheckIcon from "@/components/icons/ico-check.svg";
 import QuestionIcon from "@/components/icons/ico-question.svg";
 import { TripType } from "@/type/itenary.type";
 import { Tooltip } from "react-tooltip";
-import { ModalProvider, useModal } from "../modal";
+import { useModal } from "../modal";
 
 const options: EmblaOptionsType = {
   loop: false,
@@ -25,19 +25,18 @@ const options: EmblaOptionsType = {
 
 interface CarouselProps {
   trips: TripType[];
-  title: any;
-  idCard: any;
+  title: any; // Explicitly set title type
+  idCard: any; // Explicitly set idCard type
 }
 
 export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [showNavButtons, setShowNavButtons] = useState(false);
-
   const { openModal } = useModal();
 
   const handleOpenModal = (
     titleTrip: any,
-    imageTrip: any,
+    imageTrip: React.ReactNode,
     descriptionTrip: any,
   ) => {
     openModal(
@@ -55,10 +54,8 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
     );
   };
 
-  // Filter trips based on idCard === trip.id
   const filteredTrips = trips.filter((trip) => trip.id === idCard);
 
-  // Show/Hide navigation buttons based on window size and number of slides
   const checkNavButtons = useCallback(() => {
     if (!emblaApi) return;
 
@@ -89,9 +86,8 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
         <div className="text-center font-source-serif text-[22px] font-bold text-gray lg:text-left lg:text-[28px] lg:leading-[125%]">
           {title}
         </div>
-        {/* Show Prev/Next buttons only if needed */}
         {showNavButtons && (
-          <div className="false hidden items-center gap-6 lg:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             <button
               className="flex h-[47px] w-[47px] items-center justify-center rounded-full bg-[#e6e6e6] disabled:bg-[#F2F2F2]"
               onClick={scrollPrev}
@@ -124,7 +120,11 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
               >
                 <div className="relative flex h-full w-full flex-col overflow-hidden rounded-md border border-[#e6e6e6] lg:rounded-lg">
                   <div
-                    className={`absolute z-[2] m-2 rounded px-2 py-1 font-noto-sans text-sm font-bold leading-4 ${trip.label === "iconic" ? "bg-[#503454] text-white" : "bg-[#f5f5f5] text-gray"}`}
+                    className={`absolute z-[2] m-2 rounded px-2 py-1 font-noto-sans text-sm font-bold leading-4 ${
+                      trip.label === "iconic"
+                        ? "bg-[#503454] text-white"
+                        : "bg-[#f5f5f5] text-gray"
+                    }`}
                   >
                     {trip.label === "iconic"
                       ? "Iconic Experience"
@@ -144,8 +144,7 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                       </p>
                     </div>
 
-                    {/* Conditional rendering based on trip.included */}
-                    {trip.included === "true" && (
+                    {trip.included === true && ( // Use boolean check here
                       <div className="pb-4">
                         <div className="flex items-center gap-2">
                           <Image
@@ -161,7 +160,7 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                       </div>
                     )}
 
-                    {trip.included === "false" && (
+                    {trip.included === false && ( // Use boolean check here
                       <div className="pb-4">
                         <a
                           className="mb-4 block w-fit cursor-pointer border-b border-dotted border-[#e02044] font-noto-sans text-sm font-bold text-gray hover:border-solid"
@@ -171,7 +170,7 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                               trip.image,
                               trip.description,
                             )
-                          } // Use an arrow function to pass parameters
+                          }
                         >
                           See more
                         </a>
@@ -181,10 +180,10 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                           </span>
                           <div
                             data-tooltip-id="tooltip-tour"
-                            data-tooltip-html='
-          <strong style="font-size: 14px; font-weight: bold;">Optional Experiences</strong><br/>
-          <span style="font-size: 12px; font-weight: normal;">Optional Experiences are enchantments of your tour</span>
-        '
+                            data-tooltip-html={`
+                              <strong style="font-size: 14px; font-weight: bold;">Optional Experiences</strong><br/>
+                              <span style="font-size: 12px; font-weight: normal;">Optional Experiences are enchantments of your tour</span>
+                            `}
                           >
                             <Image
                               src={QuestionIcon}
@@ -208,7 +207,6 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
           </div>
         </div>
 
-        {/* Dot Navigation - Visible only on screens smaller than 768px */}
         <div className="mt-4 flex justify-center sm:hidden">
           {filteredTrips.map((_, index) => (
             <button
