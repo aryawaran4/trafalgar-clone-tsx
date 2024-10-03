@@ -1,4 +1,5 @@
-import React, { useCallback } from "react";
+"use client";
+import React, { useCallback, useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import Image from "next/image";
@@ -28,6 +29,28 @@ interface CarouselProps {
 
 export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [showNavButtons, setShowNavButtons] = useState(false);
+
+  // Filter trips based on idCard === trip.id
+  const filteredTrips = trips.filter((trip) => trip.id === idCard);
+
+  // Show/Hide navigation buttons based on window size and number of slides
+  const checkNavButtons = useCallback(() => {
+    if (!emblaApi) return;
+
+    const totalSlides = filteredTrips.length;
+    const slidesInView = emblaApi.slidesInView().length;
+
+    // Show navigation buttons if total slides > 3 or slides in view are fewer than total slides
+    setShowNavButtons(totalSlides > 3 || slidesInView < totalSlides);
+  }, [emblaApi, filteredTrips.length]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      checkNavButtons();
+      emblaApi.on("resize", checkNavButtons); // Listen for resize events
+    }
+  }, [emblaApi, checkNavButtons]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -43,32 +66,35 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
         <div className="text-center font-source-serif text-[22px] font-bold text-gray lg:text-left lg:text-[28px] lg:leading-[125%]">
           {title}
         </div>
-        <div className="false hidden items-center gap-6 lg:flex">
-          <button
-            className="flex h-[47px] w-[47px] items-center justify-center rounded-full bg-[#e6e6e6] disabled:bg-[#F2F2F2]"
-            onClick={scrollPrev}
-          >
-            <Image
-              className="rotate-180"
-              src={ArrowIcon}
-              alt="Previous"
-              width={24}
-              height={24}
-            />
-          </button>
-          <button
-            className="flex h-[47px] w-[47px] items-center justify-center rounded-full bg-[#e6e6e6] disabled:bg-[#F2F2F2]"
-            onClick={scrollNext}
-          >
-            <Image src={ArrowIcon} alt="Next" width={24} height={24} />
-          </button>
-        </div>
+        {/* Show Prev/Next buttons only if needed */}
+        {showNavButtons && (
+          <div className="false hidden items-center gap-6 lg:flex">
+            <button
+              className="flex h-[47px] w-[47px] items-center justify-center rounded-full bg-[#e6e6e6] disabled:bg-[#F2F2F2]"
+              onClick={scrollPrev}
+            >
+              <Image
+                className="rotate-180"
+                src={ArrowIcon}
+                alt="Previous"
+                width={24}
+                height={24}
+              />
+            </button>
+            <button
+              className="flex h-[47px] w-[47px] items-center justify-center rounded-full bg-[#e6e6e6] disabled:bg-[#F2F2F2]"
+              onClick={scrollNext}
+            >
+              <Image src={ArrowIcon} alt="Next" width={24} height={24} />
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="relative">
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="-ml-4 flex">
-            {trips.map((trip) => (
+            {filteredTrips.map((trip) => (
               <div
                 key={trip.id}
                 className="min-w-0 shrink-0 grow-0 basis-full pl-4 lg:basis-1/2 xl:basis-1/3"
@@ -94,7 +120,8 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                         {trip.description}
                       </p>
                     </div>
-                    {/* Conditional rendering based on trip.include */}
+
+                    {/* Conditional rendering based on trip.included */}
                     {trip.included === "true" && (
                       <div className="pb-4">
                         <div className="flex items-center gap-2">
@@ -114,10 +141,8 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
                     {trip.included === "false" && (
                       <div className="pb-4">
                         <a
-                          target="_blank"
                           className="mb-4 block font-noto-sans text-sm font-bold text-gray"
-                          rel="noreferrer"
-                          href="www.google.com"
+                          href=""
                         >
                           See more
                         </a>
@@ -145,8 +170,7 @@ export const Carousel = ({ trips, title, idCard }: CarouselProps) => {
 
         {/* Dot Navigation - Visible only on screens smaller than 768px */}
         <div className="mt-4 flex justify-center sm:hidden">
-          {/* Render dots based on the number of slides */}
-          {trips.map((_, index) => (
+          {filteredTrips.map((_, index) => (
             <button
               key={index}
               className="dot bg-gray-500 mx-1 h-3 w-3 rounded-full"

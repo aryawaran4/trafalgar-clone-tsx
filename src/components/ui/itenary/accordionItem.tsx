@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import Chevron from "@/components/icons/ico-chevron.svg";
 import Image from "next/image";
 import { ItenaryType, TripType } from "@/type/itenary.type";
@@ -46,9 +46,18 @@ const AccordionItem = ({
             isOpen ? "ml-0" : "md:ml-[200px]"
           }`}
         >
-          <div className="font-noto-sans text-xs font-semibold text-light-gray lg:text-base">
-            {item.day}
+          <div className="flex items-center gap-4">
+            <div className="font-noto-sans text-xs font-semibold text-light-gray lg:text-base">
+              {item.day}
+            </div>
+            <div
+              className="rounded-md px-2 py-1 font-noto-sans text-[10px] font-bold text-white lg:text-sm"
+              style={{ backgroundColor: item.labelColor }}
+            >
+              {item.labelText}
+            </div>
           </div>
+
           <div className="flex flex-col items-start gap-[.625rem] lg:flex-row lg:items-center lg:gap-[1rem]">
             <div className="text-left font-source-serif font-bold text-gray md:text-lg">
               {item.title}

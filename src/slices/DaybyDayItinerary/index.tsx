@@ -1,3 +1,4 @@
+'use client'
 import Accordion from "@/components/ui/itenary/accordion";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -25,7 +26,7 @@ const DaybyDayItinerary = ({ slice }: DaybyDayItineraryProps): JSX.Element => {
     title: <PrismicRichText field={item.title_card} />,
     location: item.location,
     labelColor: item.label_color,
-    labelText: item.label_text,
+    labelText: <PrismicRichText field={item.label_text} />,
     benefit: item.list_benefit,
     description: <PrismicRichText field={item.description_card} />,
     image: (
