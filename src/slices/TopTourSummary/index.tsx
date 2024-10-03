@@ -174,7 +174,7 @@ const TopTourSummary = ({ slice }: TopTourSummaryProps): JSX.Element => (
                 <Tooltip
                   id="tooltip-hover"
                   place="bottom"
-                  content={item.hover_tour_info}
+                  content={item.hover_tour_info as string}
                   className="tooltip-custom"
                 />
               </div>
