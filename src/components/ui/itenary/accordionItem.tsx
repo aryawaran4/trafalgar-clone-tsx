@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import Chevron from "@/components/icons/ico-chevron.svg";
 import Image from "next/image";
 import { ItenaryType, TripType } from "@/type/itenary.type";
 import { createTypeObjects } from "@/components/utils/ItenaryIcon";
 import Arrow from "@/components/icons/ico-arrow.svg";
-import Carousel from "./carousel";
+import Carousel from "@/components/ui/itenary/carousel";
 
 interface AccordionItemProps {
   isOpen: boolean;

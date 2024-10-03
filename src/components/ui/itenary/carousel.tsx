@@ -8,7 +8,7 @@ import CheckIcon from "@/components/icons/ico-check.svg";
 import QuestionIcon from "@/components/icons/ico-question.svg";
 import { TripType } from "@/type/itenary.type";
 import { Tooltip } from "react-tooltip";
-import { useModal } from "../modal";
+import { useModal } from "@/components/ui/modal";
 
 const options: EmblaOptionsType = {
   loop: false,
